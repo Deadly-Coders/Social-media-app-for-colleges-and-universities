@@ -1,32 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class Market4 extends StatefulWidget {
+  const Market4({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Market4> createState() => _Market4State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Market4State extends State<Market4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,8 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Basic Calculator',
@@ -199,14 +179,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(height: 4),
                                     Row(
                                       children: [
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
                                         Icon(Icons.star_half,
                                             color: Colors.amber),
                                         SizedBox(width: 8),
@@ -216,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(height: 4),
                                     Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           '\$19.99',
@@ -228,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           '\$24.99',
                                           style: TextStyle(
                                             decoration:
-                                            TextDecoration.lineThrough,
+                                                TextDecoration.lineThrough,
                                           ),
                                         ),
                                       ],
@@ -249,8 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Graphing Calculator',
@@ -261,16 +236,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(height: 4),
                                     Row(
                                       children: [
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
-                                        Icon(Icons.star,
-                                            color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
+                                        Icon(Icons.star, color: Colors.amber),
                                         SizedBox(width: 8),
                                         Text('(200)'),
                                       ],
@@ -278,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(height: 4),
                                     Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           '\$59.99',
@@ -290,7 +260,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           '\$69.99',
                                           style: TextStyle(
                                             decoration:
-                                            TextDecoration.lineThrough,
+                                                TextDecoration.lineThrough,
                                           ),
                                         ),
                                       ],
@@ -316,7 +286,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ReviewCard(
                     name: 'Alice Smith',
                     review:
-                    'This calculator is fantastic for my engineering classes. The graphing feature is very helpful.',
+                        'This calculator is fantastic for my engineering classes. The graphing feature is very helpful.',
                     rating: 5,
                     likes: 10,
                     dislikes: 0,
@@ -325,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ReviewCard(
                     name: 'John Doe',
                     review:
-                    'Great value for the price. It has all the functions I need for my math courses.',
+                        'Great value for the price. It has all the functions I need for my math courses.',
                     rating: 4,
                     likes: 8,
                     dislikes: 1,
@@ -334,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ReviewCard(
                     name: 'Emily Johnson',
                     review:
-                    'I love the multi-line display. It makes calculations so much easier to follow.',
+                        'I love the multi-line display. It makes calculations so much easier to follow.',
                     rating: 5,
                     likes: 12,
                     dislikes: 0,
@@ -434,7 +404,7 @@ class ReviewCard extends StatelessWidget {
                     Row(
                       children: List.generate(
                         rating,
-                            (index) => Icon(
+                        (index) => Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),

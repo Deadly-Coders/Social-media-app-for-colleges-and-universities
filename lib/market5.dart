@@ -1,32 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tutor App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Find Your Tutor'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class Market5 extends StatefulWidget {
   final String title;
+  const Market5({
+    super.key,
+    required this.title,
+  });
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Market5> createState() => _Market5State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Market5State extends State<Market5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 32),
                       textStyle: TextStyle(fontSize: 18),
                     ),
                     child: Row(

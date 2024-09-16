@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'UniColab',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: UniConnectApp(),
-    );
-  }
-}
-
 class UniConnectApp extends StatefulWidget {
+  const UniConnectApp({super.key});
+
   @override
   _UniConnectAppState createState() => _UniConnectAppState();
 }
@@ -316,11 +301,11 @@ class _UniConnectAppState extends State<UniConnectApp> {
   }
 
   Widget _buildEventCard(
-      String title,
-      String description,
-      String imagePath, {
-        required VoidCallback onPressed,
-      }) {
+    String title,
+    String description,
+    String imagePath, {
+    required VoidCallback onPressed,
+  }) {
     return InkWell(
       onTap: onPressed,
       child: Column(
@@ -348,11 +333,11 @@ class _UniConnectAppState extends State<UniConnectApp> {
   }
 
   Widget _buildTopicCard(
-      String title,
-      String description,
-      String imagePath, {
-        required VoidCallback onPressed,
-      }) {
+    String title,
+    String description,
+    String imagePath, {
+    required VoidCallback onPressed,
+  }) {
     return InkWell(
       onTap: onPressed,
       child: Column(

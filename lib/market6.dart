@@ -1,32 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TutorHub',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'TutorHub'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class Market6 extends StatefulWidget {
   final String title;
+  const Market6({
+    super.key,
+    required this.title,
+  });
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Market6> createState() => _Market6State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Market6State extends State<Market6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Container(
               height: 250,
-              child: Image.asset('assets/tutorhub_image.jpg', fit: BoxFit.cover),
+              child:
+                  Image.asset('assets/tutorhub_image.jpg', fit: BoxFit.cover),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
