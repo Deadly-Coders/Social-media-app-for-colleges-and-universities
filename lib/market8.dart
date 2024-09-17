@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class Market8 extends StatelessWidget {
+  const Market8({super.key});
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Freelance Logo Design App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FreelanceLogoDesignPage(),
-    );
-  }
-}
-
-class FreelanceLogoDesignPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +19,8 @@ class FreelanceLogoDesignPage extends StatelessWidget {
               // Image
               Container(
                 height: 200,
-                child: Image.asset('assets/logo_design_image.png'), // Replace with your image path
+                child: Image.asset(
+                    'assets/logo_design_image.png'), // Replace with your image path
               ),
               SizedBox(height: 16),
               // Title
@@ -64,7 +50,8 @@ class FreelanceLogoDesignPage extends StatelessWidget {
               _buildProjectDetailRow('Project Name', 'Tech'),
               _buildProjectDetailRow('Client', 'John'),
               _buildProjectDetailRow('Budget', '\$500'),
-              _buildProjectDetailRow('Deadline', 'Oct 15, 2023'), // Replace with actual date
+              _buildProjectDetailRow(
+                  'Deadline', 'Oct 15, 2023'), // Replace with actual date
               _buildProjectDetailRow('Style', 'Modern'),
               _buildProjectDetailRow('Tools Required', 'Adobe'),
               _buildProjectDetailRow('Experience Level', 'Intermediate'),

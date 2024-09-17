@@ -1,32 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class Market2 extends StatefulWidget {
   final String title;
+  const Market2({
+    super.key,
+    required this.title,
+  });
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Market2> createState() => _Market2State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Market2State extends State<Market2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 8.0),
+                  const SizedBox(width: 8.0),
                   Icon(Icons.star, color: Colors.amber),
                   Icon(Icons.star, color: Colors.amber),
                   Icon(Icons.star, color: Colors.amber),
@@ -278,7 +263,8 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(height: 4.0),
           Text('\$19.99', style: TextStyle(fontWeight: FontWeight.bold)),
           SizedBox(height: 4.0),
-          Text('\$24.99', style: TextStyle(decoration: TextDecoration.lineThrough)),
+          Text('\$24.99',
+              style: TextStyle(decoration: TextDecoration.lineThrough)),
         ],
       ),
     );

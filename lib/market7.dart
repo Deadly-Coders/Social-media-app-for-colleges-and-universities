@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class Market7 extends StatefulWidget {
+  const Market7({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Freelance Hub',
-      home: FreelanceHubApp(),
-    );
-  }
+  State<Market7> createState() => _Market7State();
 }
 
-class FreelanceHubApp extends StatefulWidget {
-  @override
-  _FreelanceHubAppState createState() => _FreelanceHubAppState();
-}
-
-class _FreelanceHubAppState extends State<FreelanceHubApp> {
+class _Market7State extends State<Market7> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

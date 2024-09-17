@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+class Market1 extends StatefulWidget {
+  const Market1({super.key});
+
+  @override
+  State<Market1> createState() => _Market1State();
 }
 
-class MyApp extends StatelessWidget {
+class _Market1State extends State<Market1> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +57,8 @@ class MyApp extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage('https://placehold.co/60x60'),
+                          backgroundImage:
+                              NetworkImage('https://placehold.co/60x60'),
                         ),
                         title: Text('Biology Textbook'),
                         subtitle: Text('Virendra Warade'),
@@ -84,7 +88,8 @@ class MyApp extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage('https://placehold.co/60x60'),
+                          backgroundImage:
+                              NetworkImage('https://placehold.co/60x60'),
                         ),
                         title: Text('Gadget Name'),
                         subtitle: Text('Brand Name'),
@@ -114,7 +119,8 @@ class MyApp extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage('https://placehold.co/60x60'),
+                          backgroundImage:
+                              NetworkImage('https://placehold.co/60x60'),
                         ),
                         title: Text('Essential Item'),
                         subtitle: Text('Brand Name'),
@@ -144,7 +150,8 @@ class MyApp extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage('https://placehold.co/60x60'),
+                          backgroundImage:
+                              NetworkImage('https://placehold.co/60x60'),
                         ),
                         title: Text('John Doe'),
                         subtitle: Text('Subject'),
@@ -174,7 +181,8 @@ class MyApp extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage('https://placehold.co/60x60'),
+                          backgroundImage:
+                              NetworkImage('https://placehold.co/60x60'),
                         ),
                         title: Text('Graphic Design'),
                         subtitle: Text('Company Name'),
