@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class Friend2 extends StatefulWidget {
+  const Friend2({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Friend Requests App',
-      home: FriendRequestsScreen(),
-    );
-  }
+  State<Friend2> createState() => _Friend2State();
 }
 
-class FriendRequestsScreen extends StatefulWidget {
-  @override
-  _FriendRequestsScreenState createState() => _FriendRequestsScreenState();
-}
-
-class _FriendRequestsScreenState extends State<FriendRequestsScreen> {
+class _Friend2State extends State<Friend2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,21 +131,21 @@ class FriendRequestItem extends StatelessWidget {
       subtitle: isDeclined
           ? Text('Restore')
           : Text(
-        '$mutualFriends mutual friends',
-        style: TextStyle(
-          color: Colors.grey,
-        ),
-      ),
+              '$mutualFriends mutual friends',
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
       trailing: ElevatedButton(
         onPressed: onPressed,
         child: isDeclined
             ? Text('Restore')
             : Text(
-          'Accept',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+                'Accept',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
       ),
     );
   }
@@ -191,9 +179,7 @@ class FriendListItem extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      trailing: isChat
-          ? Icon(Icons.chat_bubble_outline)
-          : null,
+      trailing: isChat ? Icon(Icons.chat_bubble_outline) : null,
       onTap: onPressed,
     );
   }

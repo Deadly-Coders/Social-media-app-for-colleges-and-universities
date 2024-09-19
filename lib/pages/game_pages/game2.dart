@@ -1,30 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class Game2 extends StatefulWidget {
+  const Game2({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Find the Error Game',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.lightBlue[50],
-      ),
-      home: HomePage(),
-    );
-  }
+  State<Game2> createState() => _Game2State();
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class _Game2State extends State<Game2> {
   final TextEditingController _controller = TextEditingController();
   List<Map<String, String>> levels = [
     {
@@ -57,7 +40,8 @@ const person = {
 };
 console.log("Name: " + person.name + " Age: " person.age);
 ''',
-      'correctAnswer': 'console.log("Name: " + person.name + " Age: " + person.age);',
+      'correctAnswer':
+          'console.log("Name: " + person.name + " Age: " + person.age);',
       'hint': 'Check how you are concatenating the age property!',
     },
   ];
@@ -82,7 +66,8 @@ console.log("Name: " + person.name + " Age: " person.age);
       } else {
         timer.cancel();
         setState(() {
-          feedback = 'Time is up! The correct answer was:\n${levels[currentLevel]['correctAnswer']}';
+          feedback =
+              'Time is up! The correct answer was:\n${levels[currentLevel]['correctAnswer']}';
           _controller.clear();
         });
       }
@@ -92,7 +77,8 @@ console.log("Name: " + person.name + " Age: " person.age);
   void checkAnswer() {
     if (_controller.text.trim() == levels[currentLevel]['correctAnswer']) {
       setState(() {
-        feedback = 'Correct! The correct line is:\n${levels[currentLevel]['correctAnswer']}';
+        feedback =
+            'Correct! The correct line is:\n${levels[currentLevel]['correctAnswer']}';
         timer?.cancel();
         currentLevel++;
         remainingTime = 120; // Reset timer for next level

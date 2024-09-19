@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class Resources3 extends StatefulWidget {
+  const Resources3({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'UT PYQS',
-      home: MyHomePage(),
-    );
-  }
+  State<Resources3> createState() => _Resources3State();
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _Resources3State extends State<Resources3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Select Year Range:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text('Select Year Range:',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: 8.0),
                         Row(
                           children: [
@@ -94,11 +85,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Select Subject:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text('Select Subject:',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: 8.0),
                         DropdownButton<String>(
                           value: 'Mathematics',
-                          items: <String>['Mathematics', 'Physics', 'Chemistry'].map((String value) {
+                          items: <String>['Mathematics', 'Physics', 'Chemistry']
+                              .map((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
@@ -118,7 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text('Available Papers', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+              child: Text('Available Papers',
+                  style:
+                      TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -158,7 +153,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text('Recent Papers', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+              child: Text('Recent Papers',
+                  style:
+                      TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -182,7 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text('Featured Papers for Quick Revision', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+              child: Text('Featured Papers for Quick Revision',
+                  style:
+                      TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -209,20 +208,25 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('[Subject] - [Year]', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+                  Text('[Subject] - [Year]',
+                      style: TextStyle(
+                          fontSize: 20.0, fontWeight: FontWeight.bold)),
                   SizedBox(height: 16.0),
                   Row(
                     children: [
                       Expanded(
-                        child: Text('Overview', style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text('Overview',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                       SizedBox(width: 16.0),
                       Expanded(
-                        child: Text('Questions List', style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text('Questions List',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                       SizedBox(width: 16.0),
                       Expanded(
-                        child: Text('Solutions', style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text('Solutions',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ],
                   ),
@@ -231,7 +235,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text('Additional Resources', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+              child: Text('Additional Resources',
+                  style:
+                      TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -262,7 +268,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.cyan,
                   ),
-                  child: Text('Need Help or Have Feedback?', style: TextStyle(color: Colors.white)),
+                  child: Text('Need Help or Have Feedback?',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
             ),
@@ -300,7 +307,8 @@ class _PaperCard extends StatelessWidget {
   final String subject;
   final String questions;
 
-  _PaperCard({required this.year, required this.subject, required this.questions});
+  _PaperCard(
+      {required this.year, required this.subject, required this.questions});
 
   @override
   Widget build(BuildContext context) {
@@ -310,11 +318,13 @@ class _PaperCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('$subject $year', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: Text('$subject $year',
+                style: TextStyle(fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('Number of Questions: $questions', style: TextStyle(fontSize: 12.0)),
+            child: Text('Number of Questions: $questions',
+                style: TextStyle(fontSize: 12.0)),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -325,7 +335,8 @@ class _PaperCard extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan,
                 ),
-                child: Text('Download/Preview', style: TextStyle(color: Colors.white)),
+                child: Text('Download/Preview',
+                    style: TextStyle(color: Colors.white)),
               ),
             ),
           ),
@@ -349,11 +360,13 @@ class _RecentPaperCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('$subject $year', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: Text('$subject $year',
+                style: TextStyle(fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('Number of Questions...', style: TextStyle(fontSize: 12.0)),
+            child: Text('Number of Questions...',
+                style: TextStyle(fontSize: 12.0)),
           ),
         ],
       ),

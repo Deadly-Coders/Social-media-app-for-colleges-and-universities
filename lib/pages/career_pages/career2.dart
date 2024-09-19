@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+class Career2 extends StatefulWidget {
+  const Career2({super.key});
+
+  @override
+  State<Career2> createState() => _Career2State();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class _Career2State extends State<Career2> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -102,27 +103,27 @@ class MyApp extends StatelessWidget {
                         companyImage: 'assets/google.png',
                         companyName: 'Google',
                         companyDescription:
-                        'Innovative tech giant known for its...'),
+                            'Innovative tech giant known for its...'),
                     CompanyCard(
                         companyImage: 'assets/microsoft.png',
                         companyName: 'Microsoft',
                         companyDescription:
-                        'Leading software company with a wid...'),
+                            'Leading software company with a wid...'),
                     CompanyCard(
                         companyImage: 'assets/amazon.png',
                         companyName: 'Amazon',
                         companyDescription:
-                        'E-commerce and cloud computing...'),
+                            'E-commerce and cloud computing...'),
                     CompanyCard(
                         companyImage: 'assets/facebook.png',
                         companyName: 'Facebook',
                         companyDescription:
-                        'Social media giant with a focus on...'),
+                            'Social media giant with a focus on...'),
                     CompanyCard(
                         companyImage: 'assets/apple.png',
                         companyName: 'Apple',
                         companyDescription:
-                        'Pioneering tech company known for it...'),
+                            'Pioneering tech company known for it...'),
                   ],
                 ),
               ),

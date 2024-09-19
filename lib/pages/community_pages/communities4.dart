@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AR Campus Tour',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: CampusTourScreen(),
-    );
-  }
-}
-
 class CampusTourScreen extends StatefulWidget {
+  const CampusTourScreen({super.key});
   @override
-  _CampusTourScreenState createState() => _CampusTourScreenState();
+  State<CampusTourScreen> createState() => _CampusTourScreenState();
 }
 
 class _CampusTourScreenState extends State<CampusTourScreen> {
@@ -34,9 +18,9 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
       'https://flutter.dev/assets/videos/butterfly.mp4',
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     )..initialize().then((_) {
-      // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-      setState(() {});
-    });
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
   }
 
   @override
@@ -64,13 +48,13 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
               children: [
                 _controller.value.isInitialized
                     ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: VideoPlayer(_controller),
-                )
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(_controller),
+                      )
                     : Container(
-                  height: 200,
-                  color: Colors.grey,
-                ),
+                        height: 200,
+                        color: Colors.grey,
+                      ),
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,

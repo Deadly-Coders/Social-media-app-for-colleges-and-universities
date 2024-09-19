@@ -1,32 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter App'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class Notification1 extends StatefulWidget {
   final String title;
+  const Notification1({
+    super.key,
+    required this.title,
+  });
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Notification1> createState() => _Notification1State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Notification1State extends State<Notification1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,12 +148,12 @@ class PreferenceItem extends StatelessWidget {
       title: Text(title),
       trailing: trailing != null
           ? Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(trailing!),
-          Icon(Icons.arrow_forward_ios),
-        ],
-      )
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(trailing!),
+                Icon(Icons.arrow_forward_ios),
+              ],
+            )
           : null,
     );
   }

@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class Communities2 extends StatefulWidget {
+  const Communities2({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'University Communities',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: UniversityCommunitiesScreen(),
-    );
-  }
+  State<Communities2> createState() => _Communities2State();
 }
 
-class UniversityCommunitiesScreen extends StatefulWidget {
-  @override
-  _UniversityCommunitiesScreenState createState() => _UniversityCommunitiesScreenState();
-}
-
-class _UniversityCommunitiesScreenState extends State<UniversityCommunitiesScreen> {
+class _Communities2State extends State<Communities2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +59,8 @@ class _UniversityCommunitiesScreenState extends State<UniversityCommunitiesScree
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       textStyle: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -89,7 +77,8 @@ class _UniversityCommunitiesScreenState extends State<UniversityCommunitiesScree
             // Add the "Harvard" image with the shield
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
-              child: Image.asset('assets/harvard_image.png'), // Replace with your actual image path
+              child: Image.asset(
+                  'assets/harvard_image.png'), // Replace with your actual image path
             ),
             // Add "New & Trending Communities" title
             Container(
