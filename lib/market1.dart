@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const Market1());
+}
+
 class Market1 extends StatefulWidget {
   const Market1({super.key});
 
