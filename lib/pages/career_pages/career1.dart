@@ -54,7 +54,7 @@ class _Career1State extends State<Career1> {
             ),
 
             // Career Options Section
-            Padding(
+            const Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: <Widget>[
@@ -156,6 +156,7 @@ class CareerCard extends StatelessWidget {
   final String company;
 
   const CareerCard({
+    super.key,
     required this.imagePath,
     required this.title,
     required this.company,
@@ -163,34 +164,39 @@ class CareerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: <Widget>[
-            Image.asset(imagePath, height: 60.0, width: 60.0),
-            SizedBox(width: 16.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, "Career2");
+      },
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: <Widget>[
+              Image.asset(imagePath, height: 60.0, width: 60.0),
+              const SizedBox(width: 16.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                SizedBox(height: 4.0),
-                Text(
-                  company,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.grey,
+                  const SizedBox(height: 4.0),
+                  Text(
+                    company,
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -203,6 +209,7 @@ class RecommendedCard extends StatelessWidget {
   final String company;
 
   const RecommendedCard({
+    super.key,
     required this.imagePath,
     required this.title,
     required this.company,
@@ -210,34 +217,39 @@ class RecommendedCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: <Widget>[
-            Image.asset(imagePath, height: 60.0, width: 60.0),
-            SizedBox(width: 16.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, "Career2");
+      },
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: <Widget>[
+              Image.asset(imagePath, height: 60.0, width: 60.0),
+              SizedBox(width: 16.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                SizedBox(height: 4.0),
-                Text(
-                  company,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.grey,
+                  SizedBox(height: 4.0),
+                  Text(
+                    company,
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

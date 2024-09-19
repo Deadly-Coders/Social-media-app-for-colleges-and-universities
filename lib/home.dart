@@ -35,7 +35,9 @@ class _UniConnectAppState extends State<UniConnectApp> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "Notification1");
+            },
             icon: Icon(Icons.notifications),
           ),
         ],
@@ -61,7 +63,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
               title: Text('Friends'),
               onTap: () {
                 // Navigate to Friends screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, 'Freind1');
               },
             ),
             ListTile(
@@ -77,7 +79,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
               title: Text('Career Hub'),
               onTap: () {
                 // Navigate to Career Hub screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, 'Career1');
               },
             ),
             ListTile(
@@ -93,7 +95,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
               title: Text('Resources'),
               onTap: () {
                 // Navigate to Resources screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, 'Resources1');
               },
             ),
             ListTile(
@@ -109,7 +111,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
               title: Text('Settings'),
               onTap: () {
                 // Navigate to Settings screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, 'Communities1');
               },
             ),
           ],
@@ -147,19 +149,25 @@ class _UniConnectAppState extends State<UniConnectApp> {
                   _buildPersonCard(
                     'Virendra Warade',
                     'assets/images/virendra.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                   SizedBox(height: 16),
                   _buildPersonCard(
                     'Saish Yadav',
                     'assets/images/saish.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                   SizedBox(height: 16),
                   _buildPersonCard(
                     'Aryan Shukla',
                     'assets/images/aryan1.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                 ],
               ),
