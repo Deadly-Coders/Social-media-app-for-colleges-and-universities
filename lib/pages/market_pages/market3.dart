@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Market3 extends StatefulWidget {
-  final String title;
-  const Market3({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  State<Market3> createState() => _Market3State();
+void main() {
+  runApp(MaterialApp(home: const Market2(title: 'Market')));
 }
 
-class _Market3State extends State<Market3> {
+class Market2 extends StatefulWidget {
+  final String title;
+  const Market2({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  State<Market2> createState() => _Market2State();
+}
+
+class _Market2State extends State<Market2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +61,7 @@ class _Market3State extends State<Market3> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 8.0),
+                  const SizedBox(width: 8.0),
                   Icon(Icons.star, color: Colors.amber),
                   Icon(Icons.star, color: Colors.amber),
                   Icon(Icons.star, color: Colors.amber),
@@ -181,13 +185,16 @@ class _Market3State extends State<Market3> {
               ),
             ),
             // User Reviews List
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return _buildUserReview(index);
-              },
+            Container(
+              height: 200, // Set an appropriate height
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return _buildUserReview(index);
+                },
+              ),
             ),
             // Write a Review Button
             Padding(
