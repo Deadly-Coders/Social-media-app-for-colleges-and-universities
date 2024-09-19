@@ -1,27 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Communities1 extends StatefulWidget {
+  const Communities1({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'University Communities',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const UniversityCommunitiesPage(),
-    );
-  }
+  State<Communities1> createState() => _Communities1State();
 }
 
-class UniversityCommunitiesPage extends StatelessWidget {
-  const UniversityCommunitiesPage({Key? key}) : super(key: key);
-
+class _Communities1State extends State<Communities1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +57,8 @@ class UniversityCommunitiesPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               children: const [
                 _CommunityTile(
-                  imagePath: 'assets/harvard.jpg', // Replace with actual image paths
+                  imagePath:
+                      'assets/harvard.jpg', // Replace with actual image paths
                   title: 'Harvard University',
                   description: 'Join the Harvard community to connect with...',
                 ),

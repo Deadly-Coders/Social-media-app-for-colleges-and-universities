@@ -52,13 +52,13 @@ class _Market1State extends State<Market1> {
                     'Buy & Sell Textbooks',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: 2,
                     itemBuilder: (context, index) {
-                      return ListTile(
+                      return const ListTile(
                         leading: CircleAvatar(
                           radius: 30,
                           backgroundImage:
@@ -89,7 +89,7 @@ class _Market1State extends State<Market1> {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: 2,
                     itemBuilder: (context, index) {
-                      return ListTile(
+                      return const ListTile(
                         leading: CircleAvatar(
                           radius: 30,
                           backgroundImage:

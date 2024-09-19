@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'UniConnect Coding Arena',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'UniConnect Coding Arena'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
+class Game1 extends StatefulWidget {
   final String title;
+  const Game1({
+    super.key,
+    required this.title,
+  });
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Game1> createState() => _Game1State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Game1State extends State<Game1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
-  Widget _buildChallenge({required String image, required String title, required String description}) {
+  Widget _buildChallenge(
+      {required String image,
+      required String title,
+      required String description}) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
       child: InkWell(
@@ -132,7 +122,12 @@ class ChallengeScreen extends StatelessWidget {
   final String title;
   final String description;
 
-  const ChallengeScreen({Key? key, required this.image, required this.title, required this.description}) : super(key: key);
+  const ChallengeScreen(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.description})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

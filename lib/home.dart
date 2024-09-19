@@ -4,7 +4,7 @@ class UniConnectApp extends StatefulWidget {
   const UniConnectApp({super.key});
 
   @override
-  _UniConnectAppState createState() => _UniConnectAppState();
+  State<UniConnectApp> createState() => _UniConnectAppState();
 }
 
 class _UniConnectAppState extends State<UniConnectApp> {
@@ -13,12 +13,15 @@ class _UniConnectAppState extends State<UniConnectApp> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Row(
-          children: [
-            Image.asset('assets/images/gta.jpg', height: 30),
-            SizedBox(width: 8),
-            Text('UniColab'),
-          ],
+        title: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset('assets/images/gta.jpg', height: 30),
+              SizedBox(width: 8),
+              Text('UniColab'),
+            ],
+          ),
         ),
         leading: Builder(
           builder: (BuildContext context) {
@@ -66,7 +69,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
               title: Text('Market'),
               onTap: () {
                 // Navigate to Market screen
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "Market1");
               },
             ),
             ListTile(

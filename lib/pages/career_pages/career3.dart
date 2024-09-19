@@ -1,34 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Career3 extends StatefulWidget {
+  const Career3({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Application Form',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ApplicationForm(),
-    );
-  }
+  State<Career3> createState() => _Career3State();
 }
 
-class ApplicationForm extends StatefulWidget {
-  const ApplicationForm({Key? key}) : super(key: key);
-
-  @override
-  State<ApplicationForm> createState() => _ApplicationFormState();
-}
-
-class _ApplicationFormState extends State<ApplicationForm> {
+class _Career3State extends State<Career3> {
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +83,11 @@ class _ApplicationFormState extends State<ApplicationForm> {
                   decoration: const InputDecoration(
                     labelText: 'Position Applied For',
                   ),
-                  items: ['Software Engineer', 'Data Scientist', 'Marketing Manager'].map((String value) {
+                  items: [
+                    'Software Engineer',
+                    'Data Scientist',
+                    'Marketing Manager'
+                  ].map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(value),
@@ -150,7 +134,8 @@ class _ApplicationFormState extends State<ApplicationForm> {
                 const SizedBox(height: 16),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Please provide details of your highest degree and work experience',
+                    labelText:
+                        'Please provide details of your highest degree and work experience',
                   ),
                   maxLines: 4,
                   validator: (value) {

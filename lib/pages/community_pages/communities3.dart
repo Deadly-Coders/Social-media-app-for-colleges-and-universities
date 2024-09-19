@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class Communities3 extends StatefulWidget {
+  const Communities3({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ARCampusTour(),
-    );
-  }
+  State<Communities3> createState() => _Communities3State();
 }
 
-class ARCampusTour extends StatefulWidget {
-  @override
-  _ARCampusTourState createState() => _ARCampusTourState();
-}
-
-class _ARCampusTourState extends State<ARCampusTour> {
+class _Communities3State extends State<Communities3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,8 +90,8 @@ class _ARCampusTourState extends State<ARCampusTour> {
                       value: 0.45,
                       strokeWidth: 10.0,
                       backgroundColor: Colors.grey,
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                          Colors.blueAccent),
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Colors.blueAccent),
                     ),
                     SizedBox(height: 16.0),
                     Text(

@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class Freind1 extends StatefulWidget {
+  const Freind1({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: FriendsList(),
-    );
-  }
+  State<Freind1> createState() => _Freind1State();
 }
 
-class FriendsList extends StatelessWidget {
+class _Freind1State extends State<Freind1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
