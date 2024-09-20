@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_flutter/drawer.dart';
 
 class UniConnectApp extends StatefulWidget {
   const UniConnectApp({super.key});
@@ -13,13 +14,12 @@ class _UniConnectAppState extends State<UniConnectApp> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Center(
+        title: const Center(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset('assets/images/gta.jpg', height: 30),
-              SizedBox(width: 8),
-              Text('UniColab'),
+              const SizedBox(width: 8),
+              const Text('UniColab'),
             ],
           ),
         ),
@@ -35,86 +35,14 @@ class _UniConnectAppState extends State<UniConnectApp> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.notifications),
+            onPressed: () {
+              Navigator.pushNamed(context, "Notification1");
+            },
+            icon: const Icon(Icons.notifications),
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'UniColab',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.people),
-              title: Text('Friends'),
-              onTap: () {
-                // Navigate to Friends screen
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.shopping_cart),
-              title: Text('Market'),
-              onTap: () {
-                // Navigate to Market screen
-                Navigator.pushNamed(context, "Market1");
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.work),
-              title: Text('Career Hub'),
-              onTap: () {
-                // Navigate to Career Hub screen
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.book),
-              title: Text('Lectures'),
-              onTap: () {
-                // Navigate to Lectures screen
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.folder),
-              title: Text('Resources'),
-              onTap: () {
-                // Navigate to Resources screen
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.group),
-              title: Text('Communities'),
-              onTap: () {
-                // Navigate to Communities screen
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Navigate to Settings screen
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -147,19 +75,25 @@ class _UniConnectAppState extends State<UniConnectApp> {
                   _buildPersonCard(
                     'Virendra Warade',
                     'assets/images/virendra.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                   SizedBox(height: 16),
                   _buildPersonCard(
                     'Saish Yadav',
                     'assets/images/saish.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                   SizedBox(height: 16),
                   _buildPersonCard(
                     'Aryan Shukla',
                     'assets/images/aryan1.png',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Profile');
+                    },
                   ),
                 ],
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_flutter/home.dart';
+import 'package:social_flutter/notification1.dart';
+import 'package:social_flutter/pages/auth_pages/login_page.dart';
 import 'package:social_flutter/pages/career_pages/career3.dart';
 import 'package:social_flutter/pages/career_pages/career4.dart';
 import 'package:social_flutter/pages/community_pages/communities1.dart';
@@ -19,7 +21,7 @@ import 'package:social_flutter/pages/market_pages/market7.dart';
 import 'package:social_flutter/pages/market_pages/market8.dart';
 import 'package:social_flutter/pages/resource_pages/resources1.dart';
 import 'package:social_flutter/pages/resource_pages/resources2.dart';
-
+import 'package:social_flutter/profile.dart';
 import 'pages/career_pages/career1.dart';
 import 'pages/career_pages/career2.dart';
 import 'pages/community_pages/communities4.dart';
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.white,
         useMaterial3: true,
       ),
-      initialRoute: "Home",
+      initialRoute: "Login",
       routes: {
         "Home": (context) => const UniConnectApp(),
         "Market1": (context) => const Market1(),
@@ -82,6 +84,13 @@ class MyApp extends StatelessWidget {
               title: '',
             ),
         "Resources3": (context) => const Resources3(),
+        "Notification1": (context) => const Notification1(title: ''),
+        "Profile": (context) => const ProfilePage(
+              title: '',
+            ),
+        "Login": (context) => const LoginPage(
+              title: '',
+            ),
       },
     );
   }

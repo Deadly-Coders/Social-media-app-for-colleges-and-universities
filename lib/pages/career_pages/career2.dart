@@ -129,7 +129,9 @@ class _Career2State extends State<Career2> {
               ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "Career3");
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.yellow,
                     padding: const EdgeInsets.symmetric(
