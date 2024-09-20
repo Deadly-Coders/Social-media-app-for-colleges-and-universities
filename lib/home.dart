@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:social_flutter/app_bar.dart';
 import 'package:social_flutter/commonnav.dart';
 import 'package:social_flutter/drawer.dart';
+import 'package:social_flutter/suggested_friends_widget.dart';
 
 class UniConnectApp extends StatefulWidget {
   const UniConnectApp({super.key});
@@ -44,30 +45,8 @@ class _UniConnectAppState extends State<UniConnectApp> {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 16),
-                  _buildPersonCard(
-                    'Virendra Warade',
-                    'assets/images/virendra.png',
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Profile');
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  _buildPersonCard(
-                    'Saish Yadav',
-                    'assets/images/saish.png',
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Profile');
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  _buildPersonCard(
-                    'Aryan Shukla',
-                    'assets/images/aryan1.png',
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Profile');
-                    },
-                  ),
+                  SizedBox(height: 8),
+                  SuggestedFriendsSection(), // Adjust spacing as needed
                 ],
               ),
             ),
@@ -158,32 +137,6 @@ class _UniConnectAppState extends State<UniConnectApp> {
         ),
       ),
       bottomNavigationBar: const BottomNavigation(),
-    );
-  }
-
-  Widget _buildPersonCard(String name, String imagePath,
-      {required VoidCallback onPressed}) {
-    return InkWell(
-      onTap: onPressed,
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundImage: AssetImage(imagePath),
-          ),
-          SizedBox(width: 16),
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
-          Spacer(),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Add'),
-          ),
-        ],
-      ),
     );
   }
 

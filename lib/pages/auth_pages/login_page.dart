@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 import 'package:social_flutter/model/api_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,11 +20,20 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() async {
     try {
-      await apiService.login(emailController.text, passwordController.text);
-      
-      // Navigate to the Home screen if login is successful
-      Navigator.pushNamed(context, "Home");
+      final token = await apiService.login(
+        emailController.text,
+        passwordController.text,
+      );
 
+      if (token != null) {
+        // Store the token and navigate to Home
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('jwt_token', token); // Store the JWT token
+
+        Navigator.pushNamed(context, "Home");
+      } else {
+        throw Exception('Login failed. No token received.');
+      }
     } catch (e) {
       // Show error message if login fails
       ScaffoldMessenger.of(context).showSnackBar(
@@ -82,8 +92,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: Text('Log In'),
             ),
-            // Additional buttons for Apple, Google, and Facebook login
-            // (Can be added here if needed)
           ],
         ),
       ),
