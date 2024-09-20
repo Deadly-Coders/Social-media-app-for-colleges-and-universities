@@ -75,6 +75,14 @@ class _AppDrawerState extends State<AppDrawer> {
             },
           ),
           ListTile(
+            leading: Icon(Icons.videogame_asset), // Gaming icon
+            title: Text('Games'),
+            onTap: () {
+              // Navigate to Games screen
+              Navigator.pushNamed(context, 'Game1');
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
             onTap: () {

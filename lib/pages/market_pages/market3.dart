@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_flutter/commonnav.dart';
 
 class Market3 extends StatefulWidget {
   final String title;
@@ -204,30 +205,7 @@ class _Market3State extends State<Market3> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 0,
-        onTap: (index) {
-          // Handle navigation
-        },
-      ),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 

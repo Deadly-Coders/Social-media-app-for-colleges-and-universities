@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:social_flutter/app_bar.dart';
+import 'package:social_flutter/commonnav.dart';
 import 'package:social_flutter/drawer.dart';
 
 class UniConnectApp extends StatefulWidget {
@@ -12,36 +14,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Center(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(width: 8),
-              const Text('UniColab'),
-            ],
-          ),
-        ),
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: Icon(Icons.menu),
-            );
-          },
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "Notification1");
-            },
-            icon: const Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar: const AppBarWidget(),
       drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -184,30 +157,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Events',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'Messages',
-          ),
-        ],
-      ),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 

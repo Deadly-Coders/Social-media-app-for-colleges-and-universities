@@ -20,11 +20,12 @@ class _LoginPageState extends State<LoginPage> {
   void _login() async {
     try {
       await apiService.login(emailController.text, passwordController.text);
-      // Navigate to another screen or show success message
-      print('Login successful');
+      
+      // Navigate to the Home screen if login is successful
+      Navigator.pushNamed(context, "Home");
+
     } catch (e) {
-      // Show error message
-      print(e);
+      // Show error message if login fails
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login failed: $e')),
       );
@@ -81,50 +82,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: Text('Log In'),
             ),
-            SizedBox(height: 16.0),
-            Text('OR', style: TextStyle(fontSize: 16.0)),
-            SizedBox(height: 16.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle Apple login logic
-              },
-              icon: Icon(Icons.apple),
-              label: Text('Apple'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
-                textStyle:
-                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle Google login logic
-              },
-              icon: Icon(Icons.g_mobiledata),
-              label: Text('Google'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
-                textStyle:
-                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle Facebook login logic
-              },
-              icon: Icon(Icons.facebook),
-              label: Text('Facebook'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
-                textStyle:
-                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-            ),
+            // Additional buttons for Apple, Google, and Facebook login
+            // (Can be added here if needed)
           ],
         ),
       ),
