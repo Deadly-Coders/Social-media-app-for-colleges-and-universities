@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(home: const Market2(title: 'Market')));
-}
-
-class Market2 extends StatefulWidget {
+class Market3 extends StatefulWidget {
   final String title;
-  const Market2({
-    Key? key,
+  const Market3({
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
-  State<Market2> createState() => _Market2State();
+  State<Market3> createState() => _Market3State();
 }
 
-class _Market2State extends State<Market2> {
+class _Market3State extends State<Market3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
