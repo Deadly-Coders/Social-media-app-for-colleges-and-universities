@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.white,
         useMaterial3: true,
       ),
-      initialRoute: "Login",
+      initialRoute: "Home",
       routes: {
         "Home": (context) => const UniConnectApp(),
         "Market1": (context) => const Market1(),
