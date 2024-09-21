@@ -27,6 +27,14 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () {
+              // Navigate to Friends screen
+              Navigator.pushNamed(context, 'Home');
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.people),
             title: Text('Friends'),
             onTap: () {
@@ -39,7 +47,7 @@ class _AppDrawerState extends State<AppDrawer> {
             title: Text('Market'),
             onTap: () {
               // Navigate to Market screen
-              Navigator.pushNamed(context, "Market1");
+              Navigator.pushNamed(context, "Market");
             },
           ),
           ListTile(
@@ -51,19 +59,19 @@ class _AppDrawerState extends State<AppDrawer> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.book),
-            title: Text('Lectures'),
+            leading: Icon(Icons.video_settings_outlined),
+            title: Text('AR'),
             onTap: () {
               // Navigate to Lectures screen
-              Navigator.pop(context);
+              Navigator.pushNamed(context, 'Video');
             },
           ),
           ListTile(
-            leading: Icon(Icons.folder),
-            title: Text('Resources'),
+            leading: Icon(Icons.chat),
+            title: Text('Chat'),
             onTap: () {
               // Navigate to Resources screen
-              Navigator.pushNamed(context, 'Resources1');
+              Navigator.pushNamed(context, 'FriendsChatScreen');
             },
           ),
           ListTile(
@@ -87,7 +95,7 @@ class _AppDrawerState extends State<AppDrawer> {
             title: Text('Settings'),
             onTap: () {
               // Navigate to Settings screen
-              Navigator.pushNamed(context, 'Communities1');
+              Navigator.pushNamed(context, 'Settings');
             },
           ),
         ],

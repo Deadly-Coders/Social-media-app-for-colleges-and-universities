@@ -1,10 +1,16 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:social_flutter/app_bar.dart';
+import 'package:social_flutter/constants/constant_url.dart';
+import 'package:social_flutter/drawer.dart';
 
 class ProfilePage extends StatefulWidget {
-  final String title;
+  final String userId; // Accept userId as a parameter
   const ProfilePage({
     super.key,
-    required this.title,
+    required this.userId,
   });
 
   @override
@@ -12,23 +18,66 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  Map<String, dynamic> user = {}; // To store user data
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserProfile();
+  }
+
+  Future<void> _fetchUserProfile() async {
+    try {
+      // Get JWT token from SharedPreferences
+      final prefs = await SharedPreferences.getInstance();
+      final token =
+          prefs.getString('jwt_token'); // Ensure token is stored after login
+
+      if (token == null) {
+        throw Exception('JWT token is missing');
+      }
+
+      // Make the request to get user details
+      final response = await http.get(
+        Uri.parse(
+            'http://${APIConstants.commonURL}/api/v1/users/${widget.userId}'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token', // Use the actual token
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        setState(() {
+          user = data['data']['doc']; // Update user data
+          isLoading = false;
+        });
+      } else {
+        throw Exception('Failed to fetch user profile: ${response.body}');
+      }
+    } catch (e) {
+      print('Error fetching user profile: $e');
+      setState(() {
+        isLoading = false;
+        user = {};
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (isLoading) {
+      return Scaffold(
+        appBar: AppBar(title: Text("Profile")),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
     return Scaffold(
-      appBar: AppBar(
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: 'Search for careers',
-            prefixIcon: Icon(Icons.search),
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: const AppBarWidget(),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -39,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   CircleAvatar(
                     backgroundImage: NetworkImage(
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Blank_portrait_placeholder.png/640px-Blank_portrait_placeholder.png'),
+                        'http://${APIConstants.commonURL}/img/users/${user['photo']}'),
                     radius: 30,
                   ),
                   SizedBox(width: 16),
@@ -47,14 +96,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'John Smith',
+                        user['name'] ?? 'Unknown User', // Display user name
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '@johnsmith',
+                        '@${user['email']}', // Use email as username
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
@@ -66,21 +115,9 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SizedBox(height: 16),
               Text(
-                'Experienced software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success...',
+                user['description'] ??
+                    'No description available.', // Display user description
                 style: TextStyle(fontSize: 14),
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('1.2K Followers'),
-                  Text('300 Following'),
-                  Text('45 Posts'),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Follow'),
-                  ),
-                ],
               ),
               SizedBox(height: 16),
               Text(
@@ -92,61 +129,11 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SizedBox(height: 16),
               Text(
-                'Over the past decade, I have successfully led multiple projects from conception to completion, including the development of a new customer relationship management system that increased...',
+                user['achievement'] ??
+                    'No achievements available.', // Display user achievements
                 style: TextStyle(fontSize: 14),
               ),
-              SizedBox(height: 16),
-              Text(
-                'Career Options',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 16),
-              _buildCareerOption(
-                icon: Icons.code,
-                title: 'Software Engineer',
-                description: 'Develops and maintains software...',
-              ),
-              _buildCareerOption(
-                icon: Icons.analytics,
-                title: 'Data Scientist',
-                description: 'Analyzes complex data to help make...',
-              ),
-              _buildCareerOption(
-                icon: Icons.list_alt,
-                title: 'Product Manager',
-                description: 'Oversees the development and delivery...',
-              ),
-              _buildCareerOption(
-                icon: Icons.design_services,
-                title: 'UX Designer',
-                description: 'Designs user-friendly interfaces for...',
-              ),
-              _buildCareerOption(
-                icon: Icons.campaign,
-                title: 'Marketing Specialist',
-                description: 'Creates marketing strategies to promote...',
-              ),
-              _buildCareerOption(
-                icon: Icons.account_balance,
-                title: 'Sales Executive',
-                description: 'Manages client relationships and sales...',
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Skills & Endorsements',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Proficient in Java, Python, and C++. Experienced in Agile methodologies and project management. Strong problem-solving skills and ability to work under pressure. Excellent communication and...',
-                style: TextStyle(fontSize: 14),
-              ),
+              // Additional sections can be added here
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {},
@@ -180,19 +167,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildCareerOption({
-    required IconData icon,
-    required String title,
-    required String description,
-  }) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
-      subtitle: Text(description),
-      trailing: Icon(Icons.arrow_forward_ios),
     );
   }
 }

@@ -60,7 +60,7 @@ class _Career1State extends State<Career1> {
                 children: <Widget>[
                   // Software Engineer Card
                   CareerCard(
-                    imagePath: 'assets/google.png',
+                    imagePath: 'assets/images/software engineer.jpeg',
                     title: 'Software Engineer',
                     company: 'Google',
                   ),
@@ -68,7 +68,7 @@ class _Career1State extends State<Career1> {
 
                   // Marketing Manager Card
                   CareerCard(
-                    imagePath: 'assets/apple.png',
+                    imagePath: 'assets/images/marketing manager.jpeg',
                     title: 'Marketing Manager',
                     company: 'Apple',
                   ),
@@ -76,7 +76,7 @@ class _Career1State extends State<Career1> {
 
                   // Data Scientist Card
                   CareerCard(
-                    imagePath: 'assets/amazon.png',
+                    imagePath: 'assets/images/amazon.png',
                     title: 'Data Scientist',
                     company: 'Amazon',
                   ),
@@ -101,7 +101,7 @@ class _Career1State extends State<Career1> {
 
                   // UX Designer Card
                   RecommendedCard(
-                    imagePath: 'assets/facebook.png',
+                    imagePath: 'assets/images/facebook.jpeg',
                     title: 'UX Designer',
                     company: 'Facebook',
                   ),
@@ -109,7 +109,7 @@ class _Career1State extends State<Career1> {
 
                   // Product Manager Card
                   RecommendedCard(
-                    imagePath: 'assets/microsoft.png',
+                    imagePath: 'assets/iamges/apple.png',
                     title: 'Product Manager',
                     company: 'Microsoft',
                   ),
@@ -173,7 +173,7 @@ class CareerCard extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Row(
             children: <Widget>[
-              Image.asset(imagePath, height: 60.0, width: 60.0),
+              Image.asset(imagePath, height: 100.0, width: 100.0),
               const SizedBox(width: 16.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

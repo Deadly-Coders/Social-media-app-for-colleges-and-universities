@@ -14,7 +14,7 @@ class _Game2State extends State<Game2> {
       'code': '''
 function calculateSum(a, b) {
   let sum = a + b;
-  console.log("The sum is: " sum);
+  console.log("The sum is: " + sum);
 }
 calculateSum(5, 10);
 ''',
@@ -26,7 +26,7 @@ calculateSum(5, 10);
 function multiply(a, b) {
   return a * b;
 }
-let result = multiply(5);
+let result = multiply(5, 10);
 console.log(result);
 ''',
       'correctAnswer': 'let result = multiply(5, 10);',
@@ -38,7 +38,7 @@ const person = {
   name: "Alice",
   age: 25,
 };
-console.log("Name: " + person.name + " Age: " person.age);
+console.log("Name: " + person.name + " Age: " + person.age);
 ''',
       'correctAnswer':
           'console.log("Name: " + person.name + " Age: " + person.age);',
@@ -112,79 +112,80 @@ console.log("Name: " + person.name + " Age: " person.age);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Find the Error Game'),
+        title: const Text('Find the Error Game'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Level ${currentLevel + 1}',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Identify and fix the error in the Node.js code below:',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            SelectableText(
-              levels[currentLevel]['code']!,
-              style: TextStyle(fontFamily: 'monospace', fontSize: 16),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Type your correction here',
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Level ${currentLevel + 1}',
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              maxLines: 1,
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  onPressed: checkAnswer,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    textStyle: TextStyle(fontSize: 16),
-                  ),
-                  child: Text('Submit'),
+              const SizedBox(height: 10),
+              const Text(
+                'Identify and fix the error in the Node.js code below:',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              SelectableText(
+                levels[currentLevel]['code']!,
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 16),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                controller: _controller,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Type your correction here',
                 ),
-                ElevatedButton(
-                  onPressed: showHint,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    textStyle: TextStyle(fontSize: 16),
+                maxLines: 1,
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: checkAnswer,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      textStyle: const TextStyle(fontSize: 16),
+                    ),
+                    child: const Text('Submit'),
                   ),
-                  child: Text('Hint'),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Text(
-              feedback,
-              style: TextStyle(fontSize: 16, color: Colors.green),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Time Remaining: ${remainingTime ~/ 60}:${(remainingTime % 60).toString().padLeft(2, '0')}',
-              style: TextStyle(fontSize: 16, color: Colors.red),
-            ),
-          ],
+                  ElevatedButton(
+                    onPressed: showHint,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      textStyle: const TextStyle(fontSize: 16),
+                    ),
+                    child: const Text('Hint'),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Text(
+                feedback,
+                style: const TextStyle(fontSize: 16, color: Colors.green),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Time Remaining: ${remainingTime ~/ 60}:${(remainingTime % 60).toString().padLeft(2, '0')}',
+                style: const TextStyle(fontSize: 16, color: Colors.red),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-//Answer
-//console.log("The sum is: " + sum);
-//let result = multiply(5, 10);
-//console.log("Name: " + person.name + " Age: " + person.age);

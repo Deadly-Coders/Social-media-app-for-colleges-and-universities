@@ -4,6 +4,8 @@ import 'package:social_flutter/notification1.dart';
 import 'package:social_flutter/pages/auth_pages/login_page.dart';
 import 'package:social_flutter/pages/career_pages/career3.dart';
 import 'package:social_flutter/pages/career_pages/career4.dart';
+import 'package:social_flutter/pages/chatting_pages/chatting_friends.dart';
+import 'package:social_flutter/pages/chatting_pages/chatting_page.dart';
 import 'package:social_flutter/pages/community_pages/communities1.dart';
 import 'package:social_flutter/pages/community_pages/communities2.dart';
 import 'package:social_flutter/pages/community_pages/communities3.dart';
@@ -19,9 +21,15 @@ import 'package:social_flutter/pages/market_pages/market5.dart';
 import 'package:social_flutter/pages/market_pages/market6.dart';
 import 'package:social_flutter/pages/market_pages/market7.dart';
 import 'package:social_flutter/pages/market_pages/market8.dart';
+import 'package:social_flutter/pages/market_pages/market_dash.dart';
 import 'package:social_flutter/pages/resource_pages/resources1.dart';
 import 'package:social_flutter/pages/resource_pages/resources2.dart';
+import 'package:social_flutter/pages/settings/edit_password.dart';
+import 'package:social_flutter/pages/settings/edit_profile.dart';
+import 'package:social_flutter/pages/settings/setting_page.dart';
 import 'package:social_flutter/profile.dart';
+import 'package:social_flutter/video_player.dart';
+import 'package:video_player/video_player.dart';
 import 'pages/career_pages/career1.dart';
 import 'pages/career_pages/career2.dart';
 import 'pages/community_pages/communities4.dart';
@@ -45,9 +53,10 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.white,
         useMaterial3: true,
       ),
-      initialRoute: "Home",
+      initialRoute: "Login",
       routes: {
         "Home": (context) => const UniConnectApp(),
+        "Market": (context) => const MarketDash(),
         "Market1": (context) => const Market1(),
         "Market2": (context) => const Market2(
               title: "Market2",
@@ -86,10 +95,22 @@ class MyApp extends StatelessWidget {
         "Resources3": (context) => const Resources3(),
         "Notification1": (context) => const Notification1(title: ''),
         "Profile": (context) => const ProfilePage(
-              title: '',
+              userId: '',
             ),
         "Login": (context) => const LoginPage(
               title: '',
+            ),
+        "Settings": (context) => const SettingPage(),
+        "Settings2": (context) => const EditProfile(),
+        "Settings3": (context) => const EditPassword(),
+        "FriendsChatScreen": (context) => const ChattingFriends(),
+        "ChattingPage": (context) => const ChattingPage(
+              friendId: '',
+              userId: '',
+              friendName: '',
+            ),
+        "Video": (context) => const VideoScreen(
+              videoPath: '',
             ),
       },
     );

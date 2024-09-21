@@ -3,6 +3,7 @@ import 'package:social_flutter/app_bar.dart';
 import 'package:social_flutter/commonnav.dart';
 import 'package:social_flutter/drawer.dart';
 import 'package:social_flutter/suggested_friends_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UniConnectApp extends StatefulWidget {
   const UniConnectApp({super.key});
@@ -33,20 +34,20 @@ class _UniConnectAppState extends State<UniConnectApp> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'People',
+                    'Suggested People',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SizedBox(height: 8),
-                  SuggestedFriendsSection(), // Adjust spacing as needed
+                  SuggestedFriendsSection(),
                 ],
               ),
             ),
@@ -70,7 +71,14 @@ class _UniConnectAppState extends State<UniConnectApp> {
                           'HackCelestial | Pillai',
                           'Join the annual hackathon',
                           'assets/images/hackcelestial.png',
-                          onPressed: () {},
+                          onPressed: () async {
+                            const url = 'http://tech.alegria.co.in/hackathon';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
                         ),
                       ),
                       SizedBox(width: 16),
@@ -92,21 +100,21 @@ class _UniConnectAppState extends State<UniConnectApp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Trending Topics',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
                       Expanded(
                         child: _buildTopicCard(
                           'Study Tips',
                           'Best study practices',
-                          'assets/images/topic1.jpg',
+                          'assets/images/study tips.png',
                           onPressed: () {},
                         ),
                       ),
@@ -115,16 +123,16 @@ class _UniConnectAppState extends State<UniConnectApp> {
                         child: _buildTopicCard(
                           'Campus News',
                           'Latest campus updates',
-                          'assets/images/topic2.jpg',
+                          'assets/images/campus news.jpeg',
                           onPressed: () {},
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: _buildTopicCard(
                           'Sports',
                           'Sports news and updates',
-                          'assets/images/topic3.jpg',
+                          'assets/images/sports.jpeg',
                           onPressed: () {},
                         ),
                       ),

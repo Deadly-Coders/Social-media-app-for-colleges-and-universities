@@ -48,22 +48,22 @@ class _Game1State extends State<Game1> {
   List<Widget> _buildChallenges() {
     return [
       _buildChallenge(
-        image: 'assets/code_error.png',
+        image: 'assets/images/error code.jpg',
         title: 'Find the Error in Code',
         description: 'Identify and fix errors in code...',
       ),
       _buildChallenge(
-        image: 'assets/code_api.png',
+        image: 'assets/images/api code.jpeg',
         title: 'Create Code for a Given API',
         description: 'Write functional code based on API documentation...',
       ),
       _buildChallenge(
-        image: 'assets/code_debugging.png',
+        image: 'assets/images/debugging.jpeg',
         title: 'Debugging Challenge',
         description: 'Fix multiple errors in a complex piece of code...',
       ),
       _buildChallenge(
-        image: 'assets/code_puzzle.png',
+        image: 'assets/images/code_puzzles.png',
         title: 'Code Puzzle',
         description: 'Solve algorithmic or logic-based puzzles using code...',
       ),
@@ -78,7 +78,6 @@ class _Game1State extends State<Game1> {
       margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
       child: InkWell(
         onTap: () {
-          // Navigate to the challenge screen
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -95,7 +94,14 @@ class _Game1State extends State<Game1> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(image, height: 120),
+              SizedBox(
+                height: 130,
+                width: double.infinity,
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                ),
+              ),
               SizedBox(height: 10),
               Text(
                 title,
@@ -122,12 +128,12 @@ class ChallengeScreen extends StatelessWidget {
   final String title;
   final String description;
 
-  const ChallengeScreen(
-      {Key? key,
-      required this.image,
-      required this.title,
-      required this.description})
-      : super(key: key);
+  const ChallengeScreen({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.description,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +146,14 @@ class ChallengeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(image),
+            SizedBox(
+              width: double
+                  .infinity, // Make the image take the full width of the screen
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover, // Adjusts the image to cover the width
+              ),
+            ),
             SizedBox(height: 16),
             Text(
               description,
@@ -149,8 +162,7 @@ class ChallengeScreen extends StatelessWidget {
             SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                // Implement challenge logic here
-                // ...
+                Navigator.pushNamed(context, "Game2");
               },
               child: Text('Start Game'),
             ),

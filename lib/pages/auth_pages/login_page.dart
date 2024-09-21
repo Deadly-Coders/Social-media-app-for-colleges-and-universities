@@ -19,6 +19,14 @@ class _LoginPageState extends State<LoginPage> {
   final ApiService apiService = ApiService();
 
   void _login() async {
+    // Basic validation
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter both email and password.')),
+      );
+      return;
+    }
+
     try {
       final token = await apiService.login(
         emailController.text,
@@ -30,6 +38,11 @@ class _LoginPageState extends State<LoginPage> {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('jwt_token', token); // Store the JWT token
 
+        // Clear input fields
+        emailController.clear();
+        passwordController.clear();
+
+        // Navigate to Home
         Navigator.pushNamed(context, "Home");
       } else {
         throw Exception('Login failed. No token received.');
@@ -37,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
     } catch (e) {
       // Show error message if login fails
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login failed: $e')),
+        SnackBar(content: Text('Login failed: ${e.toString()}')),
       );
     }
   }
