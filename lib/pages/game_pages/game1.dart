@@ -20,7 +20,7 @@ class _Game1State extends State<Game1> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.thumb_up),
+            icon: const Icon(Icons.thumb_up),
             onPressed: () {},
           ),
         ],
@@ -28,16 +28,16 @@ class _Game1State extends State<Game1> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 'Welcome back, Alex! Ready to level up your coding skills?',
                 style: TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ..._buildChallenges(),
           ],
         ),
@@ -75,7 +75,7 @@ class _Game1State extends State<Game1> {
       required String title,
       required String description}) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -90,7 +90,7 @@ class _Game1State extends State<Game1> {
           );
         },
         child: Container(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -102,18 +102,18 @@ class _Game1State extends State<Game1> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 description,
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
               ),
             ],
           ),
@@ -129,11 +129,11 @@ class ChallengeScreen extends StatelessWidget {
   final String description;
 
   const ChallengeScreen({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -154,17 +154,17 @@ class ChallengeScreen extends StatelessWidget {
                 fit: BoxFit.cover, // Adjusts the image to cover the width
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               description,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, "Game2");
               },
-              child: Text('Start Game'),
+              child: const Text('Start Game'),
             ),
           ],
         ),

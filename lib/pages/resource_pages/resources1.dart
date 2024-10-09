@@ -13,13 +13,13 @@ class _Resources1State extends State<Resources1> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        title: Text('Resources'),
+        title: const Text('Resources'),
         actions: [
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () {},
           ),
         ],
@@ -30,141 +30,141 @@ class _Resources1State extends State<Resources1> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Resources',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('UT PYQS'),
+                      child: const Text('UT PYQS'),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Semester PYQS'),
+                      child: const Text('Semester PYQS'),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Textbook PDFs'),
+                      child: const Text('Textbook PDFs'),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Search for study materials',
                   prefixIcon: Icon(Icons.search),
                   suffixIcon: Icon(Icons.mic),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Lecture Notes'),
+                      child: const Text('Lecture Notes'),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Research Papers'),
+                      child: const Text('Research Papers'),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {},
-                child: Text('Case Studies'),
+                child: const Text('Case Studies'),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Research Papers & Case Studies',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/case_study_image.png'),
-                  title: Text('The Impact of Climate...'),
-                  subtitle: Text('John Doe, 2021'),
+                  title: const Text('The Impact of Climate...'),
+                  subtitle: const Text('John Doe, 2021'),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/case_study_image2.png'),
-                  title: Text('Case Study: Tesla\'s Mark...'),
-                  subtitle: Text('Jane Smith, 2020'),
+                  title: const Text('Case Study: Tesla\'s Mark...'),
+                  subtitle: const Text('Jane Smith, 2020'),
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Online Resource Links',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/khan_academy_logo.png'),
-                  title: Text('Khan Academy'),
-                  trailing: Icon(Icons.open_in_new),
+                  title: const Text('Khan Academy'),
+                  trailing: const Icon(Icons.open_in_new),
                   onTap: () {},
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/coursera_logo.png'),
-                  title: Text('Coursera'),
-                  trailing: Icon(Icons.language),
+                  title: const Text('Coursera'),
+                  trailing: const Icon(Icons.language),
                   onTap: () {},
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Flashcards',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/biology_flashcard.png'),
-                  title: Text('Biology Basics'),
-                  subtitle: Text('Study the basics of biology'),
+                  title: const Text('Biology Basics'),
+                  subtitle: const Text('Study the basics of biology'),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Card(
                 child: ListTile(
                   leading: Image.asset('assets/physics_flashcard.png'),
-                  title: Text('Physics Formulas'),
-                  subtitle: Text('Key formulas in physics'),
+                  title: const Text('Physics Formulas'),
+                  subtitle: const Text('Key formulas in physics'),
                 ),
               ),
             ],
@@ -172,7 +172,7 @@ class _Resources1State extends State<Resources1> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

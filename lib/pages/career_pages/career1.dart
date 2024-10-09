@@ -12,7 +12,7 @@ class _Career1State extends State<Career1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Career Options'),
+        title: const Text('Career Options'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -23,7 +23,7 @@ class _Career1State extends State<Career1> {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search career options...',
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
                   ),
@@ -39,15 +39,15 @@ class _Career1State extends State<Career1> {
                 children: <Widget>[
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Location'),
+                    child: const Text('Location'),
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Industry'),
+                    child: const Text('Industry'),
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Experience Level'),
+                    child: const Text('Experience Level'),
                   ),
                 ],
               ),
@@ -55,7 +55,7 @@ class _Career1State extends State<Career1> {
 
             // Career Options Section
             const Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 children: <Widget>[
                   // Software Engineer Card
@@ -85,8 +85,8 @@ class _Career1State extends State<Career1> {
             ),
 
             // Recommended for You Section
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -227,21 +227,21 @@ class RecommendedCard extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Image.asset(imagePath, height: 60.0, width: 60.0),
-              SizedBox(width: 16.0),
+              const SizedBox(width: 16.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4.0),
+                  const SizedBox(height: 4.0),
                   Text(
                     company,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14.0,
                       color: Colors.grey,
                     ),

@@ -12,22 +12,22 @@ class _Communities2State extends State<Communities2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('University Communities'),
+        title: const Text('University Communities'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
             // Handle back button press
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.mic),
+            icon: const Icon(Icons.mic),
             onPressed: () {
               // Handle mic button press
             },
           ),
           IconButton(
-            icon: Icon(Icons.signal_cellular_4_bar),
+            icon: const Icon(Icons.signal_cellular_4_bar),
             onPressed: () {
               // Handle signal button press
             },
@@ -38,21 +38,21 @@ class _Communities2State extends State<Communities2> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               child: Row(
                 children: [
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search communities...',
-                        prefixIcon: Icon(Icons.search),
+                        prefixIcon: const Icon(Icons.search),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   ElevatedButton(
                     onPressed: () {
                       // Handle "Join University Community" button press
@@ -60,8 +60,8 @@ class _Communities2State extends State<Communities2> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      textStyle: TextStyle(
+                          const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      textStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -69,21 +69,21 @@ class _Communities2State extends State<Communities2> {
                         borderRadius: BorderRadius.circular(25),
                       ),
                     ),
-                    child: Text('Join University Community'),
+                    child: const Text('Join University Community'),
                   ),
                 ],
               ),
             ),
             // Add the "Harvard" image with the shield
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Image.asset(
                   'assets/harvard_image.png'), // Replace with your actual image path
             ),
             // Add "New & Trending Communities" title
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: Text(
+              margin: const EdgeInsets.symmetric(vertical: 16),
+              child: const Text(
                 'New & Trending Communities',
                 style: TextStyle(
                   fontSize: 20,
@@ -93,7 +93,7 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add community cards
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Expanded(
@@ -106,7 +106,7 @@ class _Communities2State extends State<Communities2> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: CommunityCard(
                       title: 'Harvard Robotics Team',
@@ -122,8 +122,8 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add "Recommended for You" title
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: Text(
+              margin: const EdgeInsets.symmetric(vertical: 16),
+              child: const Text(
                 'Recommended for You',
                 style: TextStyle(
                   fontSize: 20,
@@ -133,7 +133,7 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add recommended community card
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: CommunityCard(
                 title: 'Photography Club',
                 icon: Icons.camera_alt,
@@ -145,8 +145,8 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add AR and Video options
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: Text(
+              margin: const EdgeInsets.symmetric(vertical: 16),
+              child: const Text(
                 'Explore',
                 style: TextStyle(
                   fontSize: 20,
@@ -155,7 +155,7 @@ class _Communities2State extends State<Communities2> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Expanded(
@@ -163,22 +163,22 @@ class _Communities2State extends State<Communities2> {
                       onPressed: () {
                         // Navigate to AR functionality
                       },
-                      child: Text('AR Experience'),
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.symmetric(vertical: 20),
                       ),
+                      child: const Text('AR Experience'),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
                         // Navigate to Video functionality
                       },
-                      child: Text('Video Tours'),
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.symmetric(vertical: 20),
                       ),
+                      child: const Text('Video Tours'),
                     ),
                   ),
                 ],
@@ -186,8 +186,8 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add "Popular in Your University" title
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: Text(
+              margin: const EdgeInsets.symmetric(vertical: 16),
+              child: const Text(
                 'Popular in Your University',
                 style: TextStyle(
                   fontSize: 20,
@@ -197,7 +197,7 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add university community cards
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Expanded(
@@ -210,7 +210,7 @@ class _Communities2State extends State<Communities2> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: UniversityCommunityCard(
                       title: 'Harvard Law Society',
@@ -221,7 +221,7 @@ class _Communities2State extends State<Communities2> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: UniversityCommunityCard(
                       title: 'Harvard Medical Forum',
@@ -237,9 +237,9 @@ class _Communities2State extends State<Communities2> {
             ),
             // Add bottom navigation bar
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
+              margin: const EdgeInsets.symmetric(vertical: 16),
               child: BottomNavigationBar(
-                items: [
+                items: const [
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home),
                     label: 'Home',
@@ -275,7 +275,7 @@ class CommunityCard extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  CommunityCard({
+  const CommunityCard({super.key, 
     required this.title,
     required this.icon,
     required this.imagePath,
@@ -291,14 +291,14 @@ class CommunityCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
                   Icon(icon, size: 30),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -308,15 +308,15 @@ class CommunityCard extends StatelessWidget {
             ),
             Image.asset(imagePath, height: 100, fit: BoxFit.cover),
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: ElevatedButton(
                 onPressed: () {
                   // Handle "Join" button press
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  textStyle: TextStyle(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  textStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -324,7 +324,7 @@ class CommunityCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                   ),
                 ),
-                child: Text('Join'),
+                child: const Text('Join'),
               ),
             ),
           ],
@@ -340,7 +340,7 @@ class UniversityCommunityCard extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  UniversityCommunityCard({
+  const UniversityCommunityCard({super.key, 
     required this.title,
     required this.members,
     required this.imagePath,
@@ -356,10 +356,10 @@ class UniversityCommunityCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -367,10 +367,10 @@ class UniversityCommunityCard extends StatelessWidget {
             ),
             Image.asset(imagePath, height: 100, fit: BoxFit.cover),
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Text(
                 '$members members',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),

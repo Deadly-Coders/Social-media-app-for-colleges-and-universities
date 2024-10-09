@@ -37,7 +37,7 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.question_mark),
+            icon: const Icon(Icons.question_mark),
           ),
         ],
       ),
@@ -76,7 +76,7 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 10,
                   left: 10,
                   child: Text(
@@ -87,7 +87,7 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 10,
                   right: 10,
                   child: Text(
@@ -100,8 +100,8 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Select Your Guide',
                 style: TextStyle(
@@ -110,9 +110,9 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
                 ),
               ),
             ),
-            Card(
+            const Card(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -132,7 +132,7 @@ class _CampusTourScreenState extends State<CampusTourScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

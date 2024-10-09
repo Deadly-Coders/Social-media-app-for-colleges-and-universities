@@ -19,25 +19,25 @@ class _SettingPageState extends State<SettingPage> {
       body: ListView(
         children: [
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Edit Profile"),
-            trailing: Icon(Icons.arrow_forward_ios),
+            leading: const Icon(Icons.person),
+            title: const Text("Edit Profile"),
+            trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               Navigator.pushNamed(context, 'Settings2');
             },
           ),
           ListTile(
-            leading: Icon(Icons.lock),
-            title: Text("Edit Password"),
-            trailing: Icon(Icons.arrow_forward_ios),
+            leading: const Icon(Icons.lock),
+            title: const Text("Edit Password"),
+            trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               Navigator.pushNamed(context, 'Settings3');
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings_applications),
-            title: Text("Customize"),
-            trailing: Icon(Icons.arrow_forward_ios),
+            leading: const Icon(Icons.settings_applications),
+            title: const Text("Customize"),
+            trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {},
           ),
         ],

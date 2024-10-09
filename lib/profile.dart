@@ -70,8 +70,8 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     if (isLoading) {
       return Scaffold(
-        appBar: AppBar(title: Text("Profile")),
-        body: Center(child: CircularProgressIndicator()),
+        appBar: AppBar(title: const Text("Profile")),
+        body: const Center(child: CircularProgressIndicator()),
       );
     }
 
@@ -91,20 +91,20 @@ class _ProfilePageState extends State<ProfilePage> {
                         'http://${APIConstants.commonURL}/img/users/${user['photo']}'),
                     radius: 30,
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         user['name'] ?? 'Unknown User', // Display user name
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         '@${user['email']}', // Use email as username
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                         ),
@@ -113,38 +113,38 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 user['description'] ??
                     'No description available.', // Display user description
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Professional Achievements',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 user['achievement'] ??
                     'No achievements available.', // Display user achievements
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
               ),
               // Additional sections can be added here
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {},
-                child: Text('Add Achievement'),
+                child: const Text('Add Achievement'),
               ),
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

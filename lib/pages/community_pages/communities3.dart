@@ -12,10 +12,10 @@ class _Communities3State extends State<Communities3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AR Campus Tour'),
+        title: const Text('AR Campus Tour'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {},
           ),
         ],
@@ -24,8 +24,8 @@ class _Communities3State extends State<Communities3> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Welcome to Your AR Campus Tour',
                 style: TextStyle(
@@ -34,8 +34,8 @@ class _Communities3State extends State<Communities3> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Experience our university campus like never before with our AR Campus Tour. Discover landmarks, learn about buildings, and interact with hotspots for more information. Navigate easily with our mini-map and...',
                 textAlign: TextAlign.justify,
@@ -48,11 +48,11 @@ class _Communities3State extends State<Communities3> {
                 children: <Widget>[
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Start'),
+                    child: const Text('Start'),
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Guide'),
+                    child: const Text('Guide'),
                   ),
                 ],
               ),
@@ -60,12 +60,12 @@ class _Communities3State extends State<Communities3> {
             Card(
               child: ListTile(
                 leading: Image.asset('assets/mini_map.jpg'),
-                title: Text('Interactive Mini-Map'),
-                subtitle: Text('Navigate the campus with ease...'),
+                title: const Text('Interactive Mini-Map'),
+                subtitle: const Text('Navigate the campus with ease...'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Landmarks',
                 style: TextStyle(
@@ -74,16 +74,16 @@ class _Communities3State extends State<Communities3> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Discover key landmarks on campus with AR overlays. Tap on labels to learn more about each landmark, including its history and significance.',
                 textAlign: TextAlign.justify,
               ),
             ),
-            Card(
+            const Card(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   children: <Widget>[
                     CircularProgressIndicator(
@@ -111,12 +111,12 @@ class _Communities3State extends State<Communities3> {
             Card(
               child: ListTile(
                 leading: Image.asset('assets/virtual_guide.jpg'),
-                title: Text('Meet Your Virtual Guide'),
-                subtitle: Text('Choose from a variety of virtual guides or...'),
+                title: const Text('Meet Your Virtual Guide'),
+                subtitle: const Text('Choose from a variety of virtual guides or...'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Interactive Hotspots',
                 style: TextStyle(
@@ -125,14 +125,14 @@ class _Communities3State extends State<Communities3> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Tap on interactive hotspots around the campus to get detailed information about buildings, departments, and facilities. Learn about the services offered and the people who work there.',
                 textAlign: TextAlign.justify,
               ),
             ),
-            Card(
+            const Card(
               child: ListTile(
                 leading: Icon(Icons.photo_camera),
                 title: Text('Capture Moments'),
@@ -143,7 +143,7 @@ class _Communities3State extends State<Communities3> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

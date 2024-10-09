@@ -7,7 +7,7 @@ class Market8 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Freelance Logo Design'),
+        title: const Text('Freelance Logo Design'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -17,36 +17,36 @@ class Market8 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Image
-              Container(
+              SizedBox(
                 height: 200,
                 child: Image.asset(
                     'assets/logo_design_image.png'), // Replace with your image path
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               // Title
-              Text(
+              const Text(
                 'Top Freelance Logo Design Opportunities',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               // Description
-              Text(
+              const Text(
                 'Are you a talented logo designer looking for freelance opportunities? Look no further! Our platform connects you with clients from around the world who are in need of unique and...',
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               // Project Details
-              Text(
+              const Text(
                 'Project Details',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildProjectDetailRow('Project Name', 'Tech'),
               _buildProjectDetailRow('Client', 'John'),
               _buildProjectDetailRow('Budget', '\$500'),
@@ -55,7 +55,7 @@ class Market8 extends StatelessWidget {
               _buildProjectDetailRow('Style', 'Modern'),
               _buildProjectDetailRow('Tools Required', 'Adobe'),
               _buildProjectDetailRow('Experience Level', 'Intermediate'),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               // Apply Now Button
               Center(
                 child: ElevatedButton(
@@ -63,10 +63,10 @@ class Market8 extends StatelessWidget {
                     // Handle button press (e.g., navigate to application page)
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-                    textStyle: TextStyle(fontSize: 18),
+                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                    textStyle: const TextStyle(fontSize: 18),
                   ),
-                  child: Text('Apply Now'),
+                  child: const Text('Apply Now'),
                 ),
               ),
             ],
@@ -74,7 +74,7 @@ class Market8 extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -104,11 +104,11 @@ class Market8 extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Text(
             value,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

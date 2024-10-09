@@ -3,7 +3,6 @@ import 'package:social_flutter/app_bar.dart';
 import 'package:social_flutter/commonnav.dart';
 import 'package:social_flutter/drawer.dart';
 import 'package:social_flutter/suggested_friends_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class UniConnectApp extends StatefulWidget {
   const UniConnectApp({super.key});
@@ -26,8 +25,8 @@ class _UniConnectAppState extends State<UniConnectApp> {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search for friends, events, resources...',
-                  prefixIcon: Icon(Icons.search),
-                  suffixIcon: Icon(Icons.mic),
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: const Icon(Icons.mic),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
                   ),
@@ -56,14 +55,14 @@ class _UniConnectAppState extends State<UniConnectApp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Upcoming Events',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
                       Expanded(
@@ -71,17 +70,10 @@ class _UniConnectAppState extends State<UniConnectApp> {
                           'HackCelestial | Pillai',
                           'Join the annual hackathon',
                           'assets/images/hackcelestial.png',
-                          onPressed: () async {
-                            const url = 'http://tech.alegria.co.in/hackathon';
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
+                          onPressed: () {},
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: _buildEventCard(
                           'SIH 2024',
@@ -118,7 +110,7 @@ class _UniConnectAppState extends State<UniConnectApp> {
                           onPressed: () {},
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: _buildTopicCard(
                           'Campus News',
@@ -159,19 +151,25 @@ class _UniConnectAppState extends State<UniConnectApp> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(imagePath),
-          SizedBox(height: 8),
+          AspectRatio(
+            aspectRatio: 16 / 9, // Example aspect ratio for responsiveness
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover, // Ensures the image scales properly
+            ),
+          ),
+          const SizedBox(height: 8),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             description,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
             ),
           ),
@@ -191,19 +189,25 @@ class _UniConnectAppState extends State<UniConnectApp> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(imagePath),
-          SizedBox(height: 8),
+          AspectRatio(
+            aspectRatio: 16 / 9, // Example aspect ratio for responsiveness
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover, // Ensures the image scales properly
+            ),
+          ),
+          const SizedBox(height: 8),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             description,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
             ),
           ),

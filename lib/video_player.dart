@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 class VideoScreen extends StatefulWidget {
   final String videoPath; // Path to the video file
 
-  const VideoScreen({Key? key, required this.videoPath}) : super(key: key);
+  const VideoScreen({super.key, required this.videoPath});
 
   @override
   _VideoScreenState createState() => _VideoScreenState();
@@ -35,7 +35,7 @@ class _VideoScreenState extends State<VideoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Video Player'),
+        title: const Text('Video Player'),
       ),
       body: Center(
         child: _controller.value.isInitialized
@@ -43,7 +43,7 @@ class _VideoScreenState extends State<VideoScreen> {
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller), // Display the video
               )
-            : CircularProgressIndicator(), // Show a loading spinner until the video is initialized
+            : const CircularProgressIndicator(), // Show a loading spinner until the video is initialized
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart'; // For JWT storage
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:social_flutter/app_bar.dart';
 import 'package:social_flutter/commonnav.dart';
 import 'package:social_flutter/constants/constant_url.dart';
@@ -17,6 +17,9 @@ class Freind1 extends StatefulWidget {
 class _Freind1State extends State<Freind1> {
   @override
   Widget build(BuildContext context) {
+    // Using MediaQuery for adaptive layouts
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: const AppBarWidget(),
       drawer: const AppDrawer(),
@@ -24,14 +27,17 @@ class _Freind1State extends State<Freind1> {
         length: 3,
         child: Column(
           children: [
-            const TabBar(
-              tabs: [
-                Tab(text: 'Friends'),
-                Tab(text: 'Requests'),
-                Tab(text: 'Suggestions'),
-              ],
+            SizedBox(
+              width: screenWidth * 0.9, // Responsive width
+              child: const TabBar(
+                tabs: [
+                  Tab(text: 'Friends'),
+                  Tab(text: 'Requests'),
+                  Tab(text: 'Suggestions'),
+                ],
+              ),
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
                 children: [
                   FriendsTab(),
@@ -67,15 +73,13 @@ class _FriendsTabState extends State<FriendsTab> {
 
   Future<void> _fetchFriends() async {
     try {
-      // Get JWT token from SharedPreferences
       final prefs = await SharedPreferences.getInstance();
-      final token = prefs.getString('jwt_token'); // Ensure token is stored
+      final token = prefs.getString('jwt_token');
 
       if (token == null) {
         throw Exception('JWT token is missing');
       }
 
-      // Make API request to fetch the friend list
       final response = await http.get(
         Uri.parse('http://${APIConstants.commonURL}/api/v1/users/me'),
         headers: {
@@ -87,7 +91,7 @@ class _FriendsTabState extends State<FriendsTab> {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         setState(() {
-          friends = data['data']['doc']['friends']; // Access the friends list
+          friends = data['data']['doc']['friends'];
           isLoading = false;
         });
       } else {
@@ -103,11 +107,10 @@ class _FriendsTabState extends State<FriendsTab> {
 
   Future<void> _removeFriend(String friendId) async {
     setState(() {
-      isLoading = true; // Show loading spinner during API call
+      isLoading = true;
     });
 
     try {
-      // Get JWT token from SharedPreferences
       final prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('jwt_token');
 
@@ -115,7 +118,6 @@ class _FriendsTabState extends State<FriendsTab> {
         throw Exception('JWT token is missing');
       }
 
-      // Make DELETE request to remove friend
       final response = await http.get(
         Uri.parse(
             'http://${APIConstants.commonURL}/api/v1/users/remfriend/$friendId'),
@@ -126,10 +128,9 @@ class _FriendsTabState extends State<FriendsTab> {
       );
 
       if (response.statusCode == 204) {
-        // Remove the friend from the local list
         setState(() {
           friends.removeWhere((friend) => friend['_id'] == friendId);
-          isLoading = false; // Turn off loading
+          isLoading = false;
         });
       } else {
         throw Exception('Failed to remove friend: ${response.body}');
@@ -152,11 +153,12 @@ class _FriendsTabState extends State<FriendsTab> {
       return const Center(child: Text('No friends available.'));
     }
 
+    // Responsive layout using ListView.builder
     return ListView.builder(
       itemCount: friends.length,
       itemBuilder: (context, index) {
         final friend = friends[index];
-        return FriendItem(
+        return FriendItems(
           name: friend['name'],
           imageUrl:
               'http://${APIConstants.commonURL}/img/users/${friend['photo']}',
@@ -169,34 +171,42 @@ class _FriendsTabState extends State<FriendsTab> {
   }
 }
 
-class FriendItem extends StatelessWidget {
+class FriendItems extends StatelessWidget {
   final String name;
   final String imageUrl;
   final VoidCallback onRemove;
 
-  const FriendItem({
-    Key? key,
+  const FriendItems({
+    super.key,
     required this.name,
     required this.imageUrl,
     required this.onRemove,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return ListTile(
       leading: CircleAvatar(
         backgroundImage: NetworkImage(imageUrl),
+        radius: screenWidth * 0.06, // Responsive avatar size
       ),
-      title: Text(name),
+      title: Text(
+        name,
+        style: TextStyle(fontSize: screenWidth * 0.045), // Responsive text size
+      ),
       trailing: IconButton(
-        icon: const Icon(Icons.remove_circle),
-        onPressed: onRemove, // Trigger the onRemove callback when pressed
+        icon: Icon(Icons.remove_circle, size: screenWidth * 0.06),
+        onPressed: onRemove,
       ),
     );
   }
 }
 
 class RequestsTab extends StatelessWidget {
+  const RequestsTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Center(
@@ -206,6 +216,8 @@ class RequestsTab extends StatelessWidget {
 }
 
 class SuggestionsTab extends StatelessWidget {
+  const SuggestionsTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Center(

@@ -12,10 +12,10 @@ class _Friend3State extends State<Friend3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friend Suggestions'),
+        title: const Text('Friend Suggestions'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           ),
         ],
@@ -29,7 +29,7 @@ class _Friend3State extends State<Friend3> {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search by name or interest',
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
                   ),
@@ -37,8 +37,8 @@ class _Friend3State extends State<Friend3> {
               ),
             ),
             // Friend suggestions
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -77,8 +77,8 @@ class _Friend3State extends State<Friend3> {
               ),
             ),
             // Friends already added
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -117,7 +117,7 @@ class _Friend3State extends State<Friend3> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -151,14 +151,14 @@ class FriendCard extends StatelessWidget {
   final String profession;
   final String imageUrl;
 
-  FriendCard(
-      {required this.name, this.profession = '', required this.imageUrl});
+  const FriendCard(
+      {super.key, required this.name, this.profession = '', required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
           children: [
             // User image
@@ -166,14 +166,14 @@ class FriendCard extends StatelessWidget {
               radius: 30.0,
               backgroundImage: NetworkImage(imageUrl),
             ),
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             // User name and profession
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -181,18 +181,18 @@ class FriendCard extends StatelessWidget {
                 if (profession != '')
                   Text(
                     profession,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14.0,
                       color: Colors.grey,
                     ),
                   ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // Add friend button
             ElevatedButton(
               onPressed: () {},
-              child: Text('Add Friend'),
+              child: const Text('Add Friend'),
             ),
           ],
         ),
