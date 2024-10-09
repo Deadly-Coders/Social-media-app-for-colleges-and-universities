@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart'; // For image picking
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:http_parser/http_parser.dart'; // For specifying MIME type
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:social_flutter/app_bar.dart';

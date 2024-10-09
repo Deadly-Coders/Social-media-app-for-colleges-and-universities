@@ -17,19 +17,19 @@ class _Notification1State extends State<Notification1> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        leading: Icon(Icons.menu),
-        actions: [
+        leading: const Icon(Icons.menu),
+        actions: const [
           Icon(Icons.wifi),
           Icon(Icons.signal_cellular_alt), // Updated icon here
           Icon(Icons.battery_full),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search notifications',
@@ -38,7 +38,7 @@ class _Notification1State extends State<Notification1> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Notifications',
                 style: TextStyle(
@@ -58,7 +58,7 @@ class _Notification1State extends State<Notification1> {
               icon: Icons.event,
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Notification Preferences',
                 style: TextStyle(
@@ -80,7 +80,7 @@ class _Notification1State extends State<Notification1> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -109,21 +109,21 @@ class NotificationCard extends StatelessWidget {
   final IconData icon;
 
   const NotificationCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: ListTile(
         leading: Icon(icon),
         title: Text(title),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.more_vert),
+        trailing: const Icon(Icons.more_vert),
       ),
     );
   }
@@ -135,11 +135,11 @@ class PreferenceItem extends StatelessWidget {
   final String? trailing;
 
   const PreferenceItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +151,7 @@ class PreferenceItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(trailing!),
-                Icon(Icons.arrow_forward_ios),
+                const Icon(Icons.arrow_forward_ios),
               ],
             )
           : null,

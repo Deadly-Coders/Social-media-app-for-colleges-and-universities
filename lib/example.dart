@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -22,11 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
-    Text('Home Screen'),
-    Text('Search Screen'),
-    Text('Profile Screen'),
-    Text('Events Screen'),
-    Text('Messages Screen'),
+    const Text('Home Screen'),
+    const Text('Search Screen'),
+    const Text('Profile Screen'),
+    const Text('Events Screen'),
+    const Text('Messages Screen'),
   ];
 
   void _onItemTapped(int index) {
@@ -39,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Navigation Bar'),
+        title: const Text('Bottom Navigation Bar'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

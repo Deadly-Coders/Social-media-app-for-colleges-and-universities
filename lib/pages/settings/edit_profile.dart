@@ -203,7 +203,7 @@ class _EditProfileState extends State<EditProfile> {
                         : null,
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   initialValue: _user?.name ?? '',
                   decoration: const InputDecoration(labelText: 'Name'),
@@ -214,7 +214,7 @@ class _EditProfileState extends State<EditProfile> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   initialValue: _user?.email ?? '',
                   decoration: const InputDecoration(labelText: 'Email'),
@@ -228,58 +228,58 @@ class _EditProfileState extends State<EditProfile> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _graduationStartController,
                   decoration:
                       const InputDecoration(labelText: 'Graduation Start'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _graduationEndController,
                   decoration:
                       const InputDecoration(labelText: 'Graduation End'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _collegeNameController,
                   decoration: const InputDecoration(labelText: 'College Name'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _birthDateController,
                   decoration: const InputDecoration(labelText: 'Birth Date'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _universityNameController,
                   decoration:
                       const InputDecoration(labelText: 'University Name'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _branchController,
                   decoration: const InputDecoration(labelText: 'Branch'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _interestsController,
                   decoration: const InputDecoration(labelText: 'Interests'),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _uploadProfile(); // Call the upload method here
                     }
                   },
-                  child: const Text('Save Changes'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 32, vertical: 16),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
+                  child: const Text('Save Changes'),
                 ),
               ],
             ),

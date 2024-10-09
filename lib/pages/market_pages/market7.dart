@@ -12,10 +12,10 @@ class _Market7State extends State<Market7> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Freelance Hub'),
+        title: const Text('Freelance Hub'),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
         ],
@@ -24,7 +24,7 @@ class _Market7State extends State<Market7> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 200,
               width: double.infinity,
               child: Image.asset(
@@ -32,16 +32,16 @@ class _Market7State extends State<Market7> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 'Freelancing offers a unique opportunity to work on diverse projects, gain new skills, and enjoy the flexibility of working from anywhere. Whether you\'re a seasoned professional or just starting out...',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Wrap(
               spacing: 16,
               runSpacing: 16,
@@ -49,7 +49,12 @@ class _Market7State extends State<Market7> {
               children: [
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.work),
@@ -57,15 +62,15 @@ class _Market7State extends State<Market7> {
                       Text('Find Jobs'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.build_circle),
@@ -73,15 +78,15 @@ class _Market7State extends State<Market7> {
                       Text('Build...'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.people),
@@ -89,15 +94,15 @@ class _Market7State extends State<Market7> {
                       Text('Network'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.school),
@@ -105,15 +110,15 @@ class _Market7State extends State<Market7> {
                       Text('Learn Skills'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.money),
@@ -121,15 +126,15 @@ class _Market7State extends State<Market7> {
                       Text('Earn Money'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Row(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 1),
+                  ),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.access_time),
@@ -137,29 +142,24 @@ class _Market7State extends State<Market7> {
                       Text('Flexible...'),
                     ],
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    side: BorderSide(color: Colors.black, width: 1),
-                  ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Get Started'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow,
                 foregroundColor: Colors.black,
               ),
+              child: const Text('Get Started'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

@@ -27,9 +27,9 @@ class _Career2State extends State<Career2> {
             children: [
               Container(
                 padding: const EdgeInsets.all(16.0),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Software Engineering Careers',
                       style: TextStyle(
@@ -49,8 +49,8 @@ class _Career2State extends State<Career2> {
                 color: Colors.grey[200],
                 padding: const EdgeInsets.symmetric(
                     vertical: 16.0, horizontal: 24.0),
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.arrow_back_ios),
                     SizedBox(width: 16.0),
                     Text(
@@ -65,9 +65,9 @@ class _Career2State extends State<Career2> {
               ),
               Container(
                 padding: const EdgeInsets.all(16.0),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Why Choose Software Engineering?',
                       style: TextStyle(
@@ -85,9 +85,9 @@ class _Career2State extends State<Career2> {
               ),
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
@@ -184,11 +184,11 @@ class CompanyCard extends StatelessWidget {
   final String companyDescription;
 
   const CompanyCard({
-    Key? key,
+    super.key,
     required this.companyImage,
     required this.companyName,
     required this.companyDescription,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

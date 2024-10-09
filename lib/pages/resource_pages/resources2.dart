@@ -18,20 +18,20 @@ class _Resources2State extends State<Resources2> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {},
         ),
         title: Center(
           child: Text(
             widget.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           ),
         ],
@@ -39,7 +39,7 @@ class _Resources2State extends State<Resources2> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
               'Previous Year Questions',
@@ -60,7 +60,7 @@ class _Resources2State extends State<Resources2> {
                     groupValue: _selectedYear,
                     onChanged: (value) {
                       setState(() {
-                        _selectedYear = value as int?;
+                        _selectedYear = value;
                       });
                     },
                   ),
@@ -72,7 +72,7 @@ class _Resources2State extends State<Resources2> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

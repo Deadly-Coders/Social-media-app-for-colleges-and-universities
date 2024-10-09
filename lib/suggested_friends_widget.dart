@@ -67,7 +67,7 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
 
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Friend added successfully!')),
+          const SnackBar(content: Text('Friend added successfully!')),
         );
 
         setState(() {
@@ -91,14 +91,14 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     }
 
     if (suggestedFriends.isEmpty) {
-      return Center(child: Text('No suggested friends available.'));
+      return const Center(child: Text('No suggested friends available.'));
     }
 
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.2,
       child: ListView.builder(
         itemCount: suggestedFriends.length,
@@ -133,8 +133,8 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: EdgeInsets.all(16.0),
-        margin: EdgeInsets.symmetric(vertical: 5.0),
+        padding: const EdgeInsets.all(16.0),
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
@@ -143,7 +143,7 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -153,11 +153,11 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
               radius: 25,
               backgroundImage: NetworkImage(imagePath),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Text(
                 name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
@@ -167,7 +167,7 @@ class _SuggestedFriendsSectionState extends State<SuggestedFriendsSection> {
               onPressed: () {
                 _addFriend(friendId, index);
               },
-              child: Text('Add'),
+              child: const Text('Add'),
             ),
           ],
         ),

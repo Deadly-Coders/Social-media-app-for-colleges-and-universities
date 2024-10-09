@@ -27,72 +27,72 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
             onTap: () {
               // Navigate to Friends screen
               Navigator.pushNamed(context, 'Home');
             },
           ),
           ListTile(
-            leading: Icon(Icons.people),
-            title: Text('Friends'),
+            leading: const Icon(Icons.people),
+            title: const Text('Friends'),
             onTap: () {
               // Navigate to Friends screen
               Navigator.pushNamed(context, 'Freind1');
             },
           ),
           ListTile(
-            leading: Icon(Icons.shopping_cart),
-            title: Text('Market'),
+            leading: const Icon(Icons.shopping_cart),
+            title: const Text('Market'),
             onTap: () {
               // Navigate to Market screen
               Navigator.pushNamed(context, "Market");
             },
           ),
           ListTile(
-            leading: Icon(Icons.work),
-            title: Text('Career Hub'),
+            leading: const Icon(Icons.work),
+            title: const Text('Career Hub'),
             onTap: () {
               // Navigate to Career Hub screen
               Navigator.pushNamed(context, 'Career1');
             },
           ),
           ListTile(
-            leading: Icon(Icons.video_settings_outlined),
-            title: Text('AR'),
+            leading: const Icon(Icons.video_settings_outlined),
+            title: const Text('AR'),
             onTap: () {
               // Navigate to Lectures screen
               Navigator.pushNamed(context, 'Video');
             },
           ),
           ListTile(
-            leading: Icon(Icons.chat),
-            title: Text('Chat'),
+            leading: const Icon(Icons.chat),
+            title: const Text('Chat'),
             onTap: () {
               // Navigate to Resources screen
               Navigator.pushNamed(context, 'FriendsChatScreen');
             },
           ),
           ListTile(
-            leading: Icon(Icons.group),
-            title: Text('Communities'),
+            leading: const Icon(Icons.group),
+            title: const Text('Communities'),
             onTap: () {
               // Navigate to Communities screen
               Navigator.pop(context);
             },
           ),
           ListTile(
-            leading: Icon(Icons.videogame_asset), // Gaming icon
-            title: Text('Games'),
+            leading: const Icon(Icons.videogame_asset), // Gaming icon
+            title: const Text('Games'),
             onTap: () {
               // Navigate to Games screen
               Navigator.pushNamed(context, 'Game1');
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
             onTap: () {
               // Navigate to Settings screen
               Navigator.pushNamed(context, 'Settings');

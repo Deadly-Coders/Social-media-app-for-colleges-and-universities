@@ -58,7 +58,7 @@ console.log("Name: " + person.name + " Age: " + person.age);
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       if (remainingTime > 0) {
         setState(() {
           remainingTime--;

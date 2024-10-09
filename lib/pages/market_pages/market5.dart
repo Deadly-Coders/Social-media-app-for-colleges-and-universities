@@ -18,12 +18,12 @@ class _Market5State extends State<Market5> {
       appBar: AppBar(
         title: Text(widget.title),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
         ],
@@ -31,7 +31,7 @@ class _Market5State extends State<Market5> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 200,
               child: Stack(
                 children: [
@@ -44,7 +44,7 @@ class _Market5State extends State<Market5> {
                     left: 0,
                     right: 0,
                     child: Container(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
@@ -55,7 +55,7 @@ class _Market5State extends State<Market5> {
                           ],
                         ),
                       ),
-                      child: Column(
+                      child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -81,32 +81,32 @@ class _Market5State extends State<Market5> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'Why Choose Us?',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     'Our platform connects you with experienced tutors from various fields. Whether you need help with math, science, languages, or arts, we have the right tutor for you. Our tutors are verified professionals who are...',
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       padding:
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                      textStyle: TextStyle(fontSize: 18),
+                          const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                      textStyle: const TextStyle(fontSize: 18),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.search),

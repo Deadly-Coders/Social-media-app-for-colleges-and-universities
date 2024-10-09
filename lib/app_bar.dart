@@ -15,9 +15,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      title: Row(
+      title: const Row(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           SizedBox(width: 8),
           Text('UniColab'),
         ],

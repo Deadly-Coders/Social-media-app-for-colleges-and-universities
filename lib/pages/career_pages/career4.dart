@@ -13,13 +13,13 @@ class _Career4State extends State<Career4> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        title: Text('CareerHub'),
+        title: const Text('CareerHub'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
             onPressed: () {},
           ),
         ],
@@ -30,50 +30,50 @@ class _Career4State extends State<Career4> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
+              const Text(
                 'Submission Confirmation',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16.0),
-              Text(
+              const SizedBox(height: 16.0),
+              const Text(
                 'Thank you for submitting your job or internship to CareerHub. Your submission is currently being reviewed. You can track the status of your submission in the \'Pending\' section. If approved, it...',
                 style: TextStyle(
                   fontSize: 16.0,
                 ),
               ),
-              SizedBox(height: 32.0),
+              const SizedBox(height: 32.0),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.yellow,
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                  textStyle: TextStyle(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  textStyle: const TextStyle(
                     fontSize: 18.0,
                   ),
                 ),
-                child: Text('View Pending Submissions'),
+                child: const Text('View Pending Submissions'),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.yellow,
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                  textStyle: TextStyle(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  textStyle: const TextStyle(
                     fontSize: 18.0,
                   ),
                 ),
-                child: Text('Submit Another Job/Internship'),
+                child: const Text('Submit Another Job/Internship'),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextButton(
                 onPressed: () {},
-                child: Text('Contact Support'),
+                child: const Text('Contact Support'),
               ),
-              SizedBox(height: 32.0),
+              const SizedBox(height: 32.0),
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -84,8 +84,8 @@ class _Career4State extends State<Career4> {
                         width: 50.0,
                         height: 50.0,
                       ),
-                      SizedBox(width: 16.0),
-                      Column(
+                      const SizedBox(width: 16.0),
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
@@ -114,7 +114,7 @@ class _Career4State extends State<Career4> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

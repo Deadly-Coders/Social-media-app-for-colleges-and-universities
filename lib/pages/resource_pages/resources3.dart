@@ -12,14 +12,14 @@ class _Resources3State extends State<Resources3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('UT PYQS'),
+        title: const Text('UT PYQS'),
         actions: [
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.mic),
+            icon: const Icon(Icons.mic),
             onPressed: () {},
           ),
         ],
@@ -27,8 +27,8 @@ class _Resources3State extends State<Resources3> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -41,8 +41,8 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -85,9 +85,9 @@ class _Resources3State extends State<Resources3> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Select Subject:',
+                        const Text('Select Subject:',
                             style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(height: 8.0),
+                        const SizedBox(height: 8.0),
                         DropdownButton<String>(
                           value: 'Mathematics',
                           items: <String>['Mathematics', 'Physics', 'Chemistry']
@@ -109,14 +109,14 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text('Available Papers',
                   style:
                       TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -137,8 +137,8 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -151,14 +151,14 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text('Recent Papers',
                   style:
                       TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -177,14 +177,14 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text('Featured Papers for Quick Revision',
                   style:
                       TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -203,8 +203,8 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -233,14 +233,14 @@ class _Resources3State extends State<Resources3> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text('Additional Resources',
                   style:
                       TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
@@ -268,29 +268,29 @@ class _Resources3State extends State<Resources3> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.cyan,
                   ),
-                  child: Text('Need Help or Have Feedback?',
+                  child: const Text('Need Help or Have Feedback?',
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: Icon(Icons.contact_support),
+                  icon: const Icon(Icons.contact_support),
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Icons.favorite),
+                  icon: const Icon(Icons.favorite),
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Icons.file_copy),
+                  icon: const Icon(Icons.file_copy),
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Icons.arrow_downward),
+                  icon: const Icon(Icons.arrow_downward),
                   onPressed: () {},
                 ),
               ],
@@ -307,7 +307,7 @@ class _PaperCard extends StatelessWidget {
   final String subject;
   final String questions;
 
-  _PaperCard(
+  const _PaperCard(
       {required this.year, required this.subject, required this.questions});
 
   @override
@@ -319,12 +319,12 @@ class _PaperCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text('$subject $year',
-                style: TextStyle(fontWeight: FontWeight.bold)),
+                style: const TextStyle(fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text('Number of Questions: $questions',
-                style: TextStyle(fontSize: 12.0)),
+                style: const TextStyle(fontSize: 12.0)),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -335,7 +335,7 @@ class _PaperCard extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan,
                 ),
-                child: Text('Download/Preview',
+                child: const Text('Download/Preview',
                     style: TextStyle(color: Colors.white)),
               ),
             ),
@@ -350,7 +350,7 @@ class _RecentPaperCard extends StatelessWidget {
   final String year;
   final String subject;
 
-  _RecentPaperCard({required this.year, required this.subject});
+  const _RecentPaperCard({required this.year, required this.subject});
 
   @override
   Widget build(BuildContext context) {
@@ -361,10 +361,10 @@ class _RecentPaperCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text('$subject $year',
-                style: TextStyle(fontWeight: FontWeight.bold)),
+                style: const TextStyle(fontWeight: FontWeight.bold)),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Text('Number of Questions...',
                 style: TextStyle(fontSize: 12.0)),
           ),

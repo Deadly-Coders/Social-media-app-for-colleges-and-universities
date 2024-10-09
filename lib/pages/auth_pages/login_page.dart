@@ -65,8 +65,8 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Please log in to continue',
                 style: TextStyle(fontSize: 16.0),
@@ -76,34 +76,34 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: TextField(
                 controller: emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Username/Email',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: TextField(
                 controller: passwordController,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: _login, // Call the login function
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
                 textStyle:
-                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                    const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
-              child: Text('Log In'),
+              child: const Text('Log In'),
             ),
           ],
         ),

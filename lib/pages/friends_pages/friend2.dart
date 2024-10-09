@@ -12,9 +12,9 @@ class _Friend2State extends State<Friend2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friend Requests'),
-        leading: Icon(Icons.menu),
-        actions: [
+        title: const Text('Friend Requests'),
+        leading: const Icon(Icons.menu),
+        actions: const [
           Icon(Icons.notifications),
           SizedBox(width: 16),
           Icon(Icons.search),
@@ -25,8 +25,8 @@ class _Friend2State extends State<Friend2> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Friend Requests',
                 style: TextStyle(
@@ -47,8 +47,8 @@ class _Friend2State extends State<Friend2> {
               mutualFriends: 5,
               onPressed: () {},
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Recently Added Friends',
                 style: TextStyle(
@@ -63,8 +63,8 @@ class _Friend2State extends State<Friend2> {
               isChat: true,
               onPressed: () {},
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Declined Requests',
                 style: TextStyle(
@@ -106,41 +106,41 @@ class FriendRequestItem extends StatelessWidget {
   final VoidCallback onPressed;
 
   const FriendRequestItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.username, // Make sure username is marked 'required'
     this.mutualFriends = 0,
     this.isDeclined = false,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(
+      leading: const CircleAvatar(
         backgroundImage: NetworkImage(
           'https://picsum.photos/200/300', // Replace with actual image URL
         ),
       ),
       title: Text(
         '$name $username',
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.bold,
         ),
       ),
       subtitle: isDeclined
-          ? Text('Restore')
+          ? const Text('Restore')
           : Text(
               '$mutualFriends mutual friends',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.grey,
               ),
             ),
       trailing: ElevatedButton(
         onPressed: onPressed,
         child: isDeclined
-            ? Text('Restore')
-            : Text(
+            ? const Text('Restore')
+            : const Text(
                 'Accept',
                 style: TextStyle(
                   color: Colors.white,
@@ -158,28 +158,28 @@ class FriendListItem extends StatelessWidget {
   final VoidCallback onPressed;
 
   const FriendListItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.username,
     this.isChat = false,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(
+      leading: const CircleAvatar(
         backgroundImage: NetworkImage(
           'https://picsum.photos/200/300', // Replace with actual image URL
         ),
       ),
       title: Text(
         '$name $username',
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.bold,
         ),
       ),
-      trailing: isChat ? Icon(Icons.chat_bubble_outline) : null,
+      trailing: isChat ? const Icon(Icons.chat_bubble_outline) : null,
       onTap: onPressed,
     );
   }

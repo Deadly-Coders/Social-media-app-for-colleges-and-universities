@@ -85,15 +85,15 @@ class _EditPasswordState extends State<EditPassword> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Old Password',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _oldPasswordController,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter Current Password',
                   suffixIcon: Icon(Icons.remove_red_eye),
                 ),
@@ -104,16 +104,16 @@ class _EditPasswordState extends State<EditPassword> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
-              Text(
+              const SizedBox(height: 24),
+              const Text(
                 'New Password',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _newPasswordController,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter New Password',
                   suffixIcon: Icon(Icons.remove_red_eye),
                 ),
@@ -124,16 +124,16 @@ class _EditPasswordState extends State<EditPassword> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
-              Text(
+              const SizedBox(height: 24),
+              const Text(
                 'Confirm Password',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _confirmPasswordController,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Confirm New Password',
                   suffixIcon: Icon(Icons.remove_red_eye),
                 ),
@@ -144,15 +144,15 @@ class _EditPasswordState extends State<EditPassword> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: _changePassword, // Call the change password method
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan,
-                  padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                  textStyle: TextStyle(fontSize: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                  textStyle: const TextStyle(fontSize: 16),
                 ),
-                child: Text('Save Changes'),
+                child: const Text('Save Changes'),
               ),
             ],
           ),

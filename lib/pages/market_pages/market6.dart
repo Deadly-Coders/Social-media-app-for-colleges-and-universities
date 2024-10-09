@@ -21,13 +21,13 @@ class _Market6State extends State<Market6> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 250,
               child:
                   Image.asset('assets/tutorhub_image.jpg', fit: BoxFit.cover),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Join Us',
                 style: TextStyle(
@@ -36,8 +36,8 @@ class _Market6State extends State<Market6> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Become a Extraordinary Student',
                 style: TextStyle(
@@ -52,13 +52,13 @@ class _Market6State extends State<Market6> {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.schedule),
-                    label: Text('Schedule'),
+                    icon: const Icon(Icons.schedule),
+                    label: const Text('Schedule'),
                   ),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.star),
-                    label: Text('Career'),
+                    icon: const Icon(Icons.star),
+                    label: const Text('Career'),
                   ),
                 ],
               ),
@@ -70,19 +70,19 @@ class _Market6State extends State<Market6> {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.people),
-                    label: Text('Students'),
+                    icon: const Icon(Icons.people),
+                    label: const Text('Students'),
                   ),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.group),
-                    label: Text('Community'),
+                    icon: const Icon(Icons.group),
+                    label: const Text('Community'),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Why Tutor with Us?',
                 style: TextStyle(
@@ -91,8 +91,8 @@ class _Market6State extends State<Market6> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Tutoring with us offers a flexible schedule that fits around your life. You can work from anywhere, helping students from all over the world. Our platform provides a supportive community of...',
                 style: TextStyle(
@@ -104,7 +104,7 @@ class _Market6State extends State<Market6> {
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Apply now'),
+                child: const Text('Apply now'),
               ),
             ),
           ],

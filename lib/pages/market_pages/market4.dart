@@ -13,10 +13,10 @@ class _Market4State extends State<Market4> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {},
         ),
-        title: Text(
+        title: const Text(
           'Purchase Scientific Calculator',
           style: TextStyle(
             color: Colors.black,
@@ -24,7 +24,7 @@ class _Market4State extends State<Market4> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {},
           ),
         ],
@@ -41,15 +41,15 @@ class _Market4State extends State<Market4> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Advanced Scientific Calculator',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Row(
+                  const SizedBox(height: 8),
+                  const Row(
                     children: [
                       Text(
                         '4.5',
@@ -74,26 +74,26 @@ class _Market4State extends State<Market4> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     'The Advanced Scientific Calculator is designed for students and professionals. It features a multi-line display, graphing capability, and comes with a battery included. The calculator is lightweight and portable...',
                     style: TextStyle(
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(height: 24),
-                  Text(
+                  const SizedBox(height: 24),
+                  const Text(
                     'Features & Specifications',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Quantity',
                         style: TextStyle(
                           fontSize: 16,
@@ -102,19 +102,19 @@ class _Market4State extends State<Market4> {
                       Row(
                         children: [
                           IconButton(
-                            icon: Icon(Icons.remove),
+                            icon: const Icon(Icons.remove),
                             onPressed: () {},
                           ),
-                          Text('1'),
+                          const Text('1'),
                           IconButton(
-                            icon: Icon(Icons.add),
+                            icon: const Icon(Icons.add),
                             onPressed: () {},
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -122,41 +122,41 @@ class _Market4State extends State<Market4> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 32,
                             vertical: 16,
                           ),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        child: Text('Add to Cart'),
+                        child: const Text('Add to Cart'),
                       ),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 32,
                             vertical: 16,
                           ),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        child: Text('Buy Now'),
+                        child: const Text('Buy Now'),
                       ),
                     ],
                   ),
-                  SizedBox(height: 32),
-                  Text(
+                  const SizedBox(height: 32),
+                  const Text(
                     'Related Products',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -165,8 +165,8 @@ class _Market4State extends State<Market4> {
                           child: Column(
                             children: [
                               Image.asset('assets/calculator2.jpg'),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -216,14 +216,14 @@ class _Market4State extends State<Market4> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: Card(
                           child: Column(
                             children: [
                               Image.asset('assets/calculator3.jpg'),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -274,16 +274,16 @@ class _Market4State extends State<Market4> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 32),
-                  Text(
+                  const SizedBox(height: 32),
+                  const Text(
                     'User Reviews',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
-                  ReviewCard(
+                  const SizedBox(height: 16),
+                  const ReviewCard(
                     name: 'Alice Smith',
                     review:
                         'This calculator is fantastic for my engineering classes. The graphing feature is very helpful.',
@@ -291,8 +291,8 @@ class _Market4State extends State<Market4> {
                     likes: 10,
                     dislikes: 0,
                   ),
-                  SizedBox(height: 16),
-                  ReviewCard(
+                  const SizedBox(height: 16),
+                  const ReviewCard(
                     name: 'John Doe',
                     review:
                         'Great value for the price. It has all the functions I need for my math courses.',
@@ -300,8 +300,8 @@ class _Market4State extends State<Market4> {
                     likes: 8,
                     dislikes: 1,
                   ),
-                  SizedBox(height: 16),
-                  ReviewCard(
+                  const SizedBox(height: 16),
+                  const ReviewCard(
                     name: 'Emily Johnson',
                     review:
                         'I love the multi-line display. It makes calculations so much easier to follow.',
@@ -309,21 +309,21 @@ class _Market4State extends State<Market4> {
                     likes: 12,
                     dislikes: 0,
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   Center(
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 32,
                           vertical: 16,
                         ),
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontSize: 16,
                         ),
                       ),
-                      child: Text('Write a Review'),
+                      child: const Text('Write a Review'),
                     ),
                   ),
                 ],
@@ -369,13 +369,13 @@ class ReviewCard extends StatelessWidget {
   final int dislikes;
 
   const ReviewCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.review,
     required this.rating,
     required this.likes,
     required this.dislikes,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -387,24 +387,24 @@ class ReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: AssetImage('assets/profile.jpg'),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Row(
                       children: List.generate(
                         rating,
-                        (index) => Icon(
+                        (index) => const Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),
@@ -414,21 +414,21 @@ class ReviewCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               review,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.thumb_up),
+                      icon: const Icon(Icons.thumb_up),
                       onPressed: () {},
                     ),
                     Text('$likes'),
@@ -437,7 +437,7 @@ class ReviewCard extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.thumb_down),
+                      icon: const Icon(Icons.thumb_down),
                       onPressed: () {},
                     ),
                     Text('$dislikes'),
